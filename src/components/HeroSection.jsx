@@ -104,6 +104,7 @@ export default function HeroSection() {
                     <CustomButton variant="black">Make a Deal</CustomButton>
                 </div>
             </div>
+            
         </section>
     );
 }
