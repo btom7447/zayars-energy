@@ -1,26 +1,174 @@
 @import "tailwindcss";
+@import '@splidejs/splide/dist/css/splide.min.css';
+@import "aos/dist/aos.css";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --primary: #1B263B;
+  --secondary: #F5C542;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #1B263B;   
+    --secondary: #F5C542;
   }
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.signature {
+  font-family: var(--font-babylonica), cursive;
+}
+
+/* Rest of your existing styles... */
+.cssbuttons-io-button {
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 60px;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  min-width: 200px;
+}
+
+/* Base button */
+.cssbuttons-io-button {
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 60px;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  min-width: 200px;
+}
+
+/* Shared icon container */
+.cssbuttons-io-button .icon {
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 60px;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+/* Variant: white background with black inner button */
+.cssbuttons-io-button.white-variant {
+  background: white;
+  color: black;
+  box-shadow: inset 0 0 1.6em -0.2em #ccc;
+}
+.cssbuttons-io-button.gold-variant {
+  background: white;
+  color: black;
+  box-shadow: inset 0 0 1.6em -0.2em #ccc;
+}
+
+.cssbuttons-io-button.white-variant .icon {
+  background: black;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #555;
+}
+.cssbuttons-io-button.gold-variant .icon {
+  background: var(--secondary);
+  /* box-shadow: 0.1em 0.1em 0.6em 0.2em var(-); */
+}
+.cssbuttons-io-button.white-variant .icon svg {
+  color: white;
+}
+.cssbuttons-io-button.gold-variant .icon svg {
+  color: black;
+}
+/* Variant: black background with white inner button */
+.cssbuttons-io-button.black-variant {
+  background: black;
+  color: white;
+  box-shadow: inset 0 0 1.6em -0.6em #333;
+}
+
+.cssbuttons-io-button.black-variant .icon {
+  background: white;
+  box-shadow: 0.1em 0.1em 0.2em 0.2em #747474;
+}
+
+.cssbuttons-io-button.black-variant .icon svg {
+  color: black;
+}
+
+.splide__arrow {
+  background: #fff !important;
+  border: solid 1px var(--primary) !important;
+  width: 4em !important;
+  height: 4em !important;
+}
+.splide__arrow--next {
+  right: 0em !important;
+}
+.splide__arrow--prev {
+  left: 0em !important;
+}
+
+.text-outline {
+  color: transparent;                 
+  -webkit-text-stroke: 2px #d9d9d9; 
+}
+
+/* * {
+  outline: red solid 1px;
+} */
