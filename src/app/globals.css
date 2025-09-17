@@ -1,12 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&display=swap');
+
 @import "tailwindcss";
 @import '@splidejs/splide/dist/css/splide.min.css';
 @import "aos/dist/aos.css";
+
+/* Import fonts from CDN */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --primary: #1B263B;
   --secondary: #F5C542;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-babylonica: 'Babylonica', cursive;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +24,9 @@
     --foreground: #ededed;
     --primary: #1B263B;   
     --secondary: #F5C542;
+    --font-poppins: 'Poppins', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-babylonica: 'Babylonica', cursive;
   }
 }
 
