@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Babylonica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 @import "tailwindcss";
 @import '@splidejs/splide/dist/css/splide.min.css';
@@ -16,6 +17,7 @@
   --font-poppins: 'Poppins', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
   --font-babylonica: 'Babylonica', cursive;
+  --font-merriweather: 'Merriweather', serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,8 +27,9 @@
     --primary: #1B263B;   
     --secondary: #F5C542;
     --font-poppins: 'Poppins', sans-serif;
-  --font-montserrat: 'Montserrat', sans-serif;
-  --font-babylonica: 'Babylonica', cursive;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-babylonica: 'Babylonica', cursive;
+    --font-merriweather: 'Merriweather', serif; 
   }
 }
 
@@ -46,6 +49,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .signature {
   font-family: var(--font-babylonica), cursive;
+}
+.slate {
+  font-family: var(--font-merriweather), 'Times New Roman', Times, serif !important;
 }
 
 /* Rest of your existing styles... */

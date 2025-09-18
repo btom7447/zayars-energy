@@ -32,7 +32,7 @@ export default function NavMenu({ isOpen, setIsOpen }) {
         >
           {/* Menu Section */}
           <div className="mb-6">
-            <h6 className="text-white text-2xl font-semibold mb-5">Menu</h6>
+            <h6 className="slate text-white text-2xl mb-5">Menu</h6>
             <ul className="grid grid-cols-2 gap-5">
               {menuItems.map(({ name, href, icon: Icon }) => (
                 <li key={name}>
@@ -50,7 +50,7 @@ export default function NavMenu({ isOpen, setIsOpen }) {
 
           {/* Social Handles Section */}
           <div>
-            <h6 className="text-white text-2xl font-semibold mb-5">Social Handles</h6>
+            <h6 className="slate text-white text-2xl mb-5">Social Handles</h6>
             <ul className="flex gap-4">
               {socialHandles.map(({ name, href, icon: Icon }) => (
                 <li key={name} className="p-2 border border-white hover:border-yellow-500 rounded-full">

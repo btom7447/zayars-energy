@@ -73,7 +73,7 @@ export default function ServicesSection() {
                         <SplideSlide key={index}>
                             <div className="px-0 lg:px-30">
                                 <h5 
-                                    className="text-primary text-xl lg:text-7xl font-semibold mb-5 text-blue-950 text-heading"
+                                    className="slate text-primary text-xl lg:text-7xl font-semibold mb-5 text-blue-950 text-heading"
                                     data-aos="fade-right"
                                     data-aos-delay="200"
                                 >

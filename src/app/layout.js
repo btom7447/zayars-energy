@@ -1,4 +1,4 @@
-import { Poppins, Montserrat, Babylonica } from "next/font/google";
+import { Poppins, Montserrat, Babylonica, Merriweather } from "next/font/google";
 import "./globals.css"
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -25,6 +25,13 @@ const babylonica = Babylonica({
   display: "swap",
 });
 
+const merriweather = Merriweather({
+  variable: "--font-merriweather", 
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
 export const metadata = {
   title: "Zayars Energy",
   description: "Powering the Future",
@@ -32,7 +39,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${montserrat.variable} ${babylonica.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${montserrat.variable} ${babylonica.variable} ${merriweather.variable}`}>
       <body className="font-montserrat antialiased">
         <Header />
         <main className="bg-white">{children}</main>
