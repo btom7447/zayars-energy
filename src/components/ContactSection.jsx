@@ -140,7 +140,7 @@ export default function ContactSection() {
                     data-aos-delay="800"
                 >
                     <div>
-                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-5 flex items-center">
+                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-0 lg:mb-5 flex items-center">
                             <Image 
                                 src="/images/icons/mail-icon.png"
                                 alt="Email icon"
@@ -160,7 +160,7 @@ export default function ContactSection() {
                     data-aos-delay="900"
                 >
                     <div>
-                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-5 flex items-center">
+                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-0 lg:mb-5 flex items-center">
                             <Image 
                                 src="/images/icons/call-icon.png"
                                 alt="Email icon"
@@ -180,7 +180,7 @@ export default function ContactSection() {
                     data-aos-delay="1000"
                 >
                     <div>
-                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-5 flex items-center">
+                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-0 lg:mb-5 flex items-center">
                             <Image 
                                 src="/images/icons/pin-icon.png"
                                 alt="Email icon"

@@ -6,7 +6,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
     return (
         <footer className="w-full bg-blue-950 px-10 pt-10 lg:px-20 lg:pt-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-10 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 items-start">
                 {/* Company Section */}
                 <div className="xl:col-span-1">
                     <h6 className="text-2xl font-semibold text-yellow-500 mb-5">Company</h6>

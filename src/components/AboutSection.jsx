@@ -64,7 +64,7 @@ export default function AboutSection() {
                     CEO
                 </h6>
                 <div 
-                    className="mt-20 grid grid-cols-2 xl:grid-cols-4 gap-10"
+                    className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-10"
                 >
                     <div className="flex flex-col items-center"
                         data-aos="fade-up"

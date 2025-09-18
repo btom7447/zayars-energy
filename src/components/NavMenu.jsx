@@ -53,7 +53,7 @@ export default function NavMenu({ isOpen, setIsOpen }) {
             <h6 className="text-white text-2xl font-semibold mb-5">Social Handles</h6>
             <ul className="flex gap-4">
               {socialHandles.map(({ name, href, icon: Icon }) => (
-                <li key={name}>
+                <li key={name} className="p-2 border border-white hover:border-yellow-500 rounded-full">
                   <a
                     href={href}
                     target="_blank"
@@ -61,7 +61,7 @@ export default function NavMenu({ isOpen, setIsOpen }) {
                     className="text-white hover:text-yellow-300 transition-colors"
                     aria-label={name}
                   >
-                    <Icon size={25} strokeWidth={1} />
+                    <Icon size={18} strokeWidth={1} />
                   </a>
                 </li>
               ))}

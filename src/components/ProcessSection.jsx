@@ -124,7 +124,7 @@ export default function ProcessSection() {
                     key={processFlow[activeStep]?.title}
                     className="relative"
                 >
-                    <span data-aos-delay="200" className="absolute -top-25 lg:-top-78 -left-0 lg:-left-60 text-8xl lg:text-[200px] font-bold text-outline">
+                    <span data-aos-delay="200" className="absolute -top-25 lg:-top-78 -left-0 xl:-left-60 text-8xl lg:text-[200px] font-bold text-outline">
                         {processFlow[activeStep]?.step}
                     </span>
                     <h3 data-aos-delay="500" className="text-black text-xl lg:text-5xl font-semibold mb-4">
