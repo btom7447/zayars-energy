@@ -34,7 +34,7 @@ const merriweather = Merriweather({
 
 export const metadata = {
   title: "Zayars Energy",
-  description: "Powering the Future",
+  description: "Elite brokerage serveice in crude oil, refined products, natural gas and renewables",
 };
 
 export default function RootLayout({ children }) {
