@@ -32,7 +32,7 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
                 <div>
                     <p 
-                        className="max-w-xl text-black text-xl lg:text-2xl font-light"
+                        className="max-w-xl text-black text-lg lg:text-2xl font-light"
                         data-aos="fade-right"
                         data-aos-delay="200"
                     >

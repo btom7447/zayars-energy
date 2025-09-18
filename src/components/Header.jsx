@@ -61,13 +61,13 @@ export default function Header() {
                 {/* Menu Button */}
                 <button
                     onClick={() => setIsOriginalOpen(!isOriginalOpen)}
-                    className={`rounded-full p-5 border cursor-pointer transition-colors ${
+                    className={`rounded-full p-3 lg:p-5 border cursor-pointer transition-colors ${
                     scrolled ? "border-blue-950 text-blue-950" : "border-white text-white"
                     }`}
                     aria-label="Toggle Menu"
                 >
                     {isOriginalOpen ? (
-                        <X size={20} />
+                        <X size={25} />
                         ) : (
                         <Image
                             src={scrolled ? "/images/icons/menu-icon-two.png" : "/images/icons/menu-icon.png"}
@@ -108,11 +108,11 @@ export default function Header() {
                 {/* Menu Button */}
                 <button
                     onClick={() => setIsFixedOpen(!isFixedOpen)}
-                    className="rounded-full p-5 border border-blue-950 text-blue-950 cursor-pointer transition-colors"
+                    className="rounded-full p-3 lg:p-5 border border-blue-950 text-blue-950 cursor-pointer transition-colors"
                     aria-label="Toggle Menu"
                 >
                     {isFixedOpen ? (
-                        <X size={20} />
+                        <X size={25} />
                         ) : (
                         <Image
                             src="/images/icons/menu-icon-two.png"
