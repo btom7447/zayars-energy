@@ -41,7 +41,7 @@ export default function ContactSection() {
                     </p>
                     <ul className="my-10 space-y-5">
                         <li 
-                            className="text-lg lg:text-2xl text-black font-light flex items-center gap-3"
+                            className="text-sm lg:text-2xl text-black font-light flex items-center gap-3"
                             data-aos="fade-right"
                             data-aos-delay="300"
                         >
@@ -51,7 +51,7 @@ export default function ContactSection() {
                             Personalized Assistance
                         </li>
                         <li 
-                            className="text-lg lg:text-2xl text-black font-light flex items-center gap-3"
+                            className="text-sm lg:text-2xl text-black font-light flex items-center gap-3"
                             data-aos="fade-right"
                             data-aos-delay="400"
                         >
@@ -61,7 +61,7 @@ export default function ContactSection() {
                             Timely Response
                         </li>
                         <li 
-                            className="text-lg lg:text-2xl text-black font-light flex items-center gap-3"
+                            className="text-sm lg:text-2xl text-black font-light flex items-center gap-3"
                             data-aos="fade-right"
                             data-aos-delay="500"
                         >
@@ -140,7 +140,7 @@ export default function ContactSection() {
                     data-aos-delay="800"
                 >
                     <div>
-                        <div className="bg-blue-950 p-3 mb-5 flex items-center">
+                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-5 flex items-center">
                             <Image 
                                 src="/images/icons/mail-icon.png"
                                 alt="Email icon"
@@ -160,7 +160,7 @@ export default function ContactSection() {
                     data-aos-delay="900"
                 >
                     <div>
-                        <div className="bg-blue-950 p-3 mb-5 flex items-center">
+                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-5 flex items-center">
                             <Image 
                                 src="/images/icons/call-icon.png"
                                 alt="Email icon"
@@ -180,7 +180,7 @@ export default function ContactSection() {
                     data-aos-delay="1000"
                 >
                     <div>
-                        <div className="bg-blue-950 p-3 mb-5 flex items-center">
+                        <div className="bg-blue-950 p-3 w-fit rounded-full mb-5 flex items-center">
                             <Image 
                                 src="/images/icons/pin-icon.png"
                                 alt="Email icon"
