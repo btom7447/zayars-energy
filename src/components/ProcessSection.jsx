@@ -116,7 +116,7 @@ export default function ProcessSection() {
             </h2>
 
             {/* Sticky container */}
-            <div className="sticky top-50 h-[70dvh] xl:h-[60dvh] flex items-center justify-center">
+            <div className="sticky top-30 lg:top-50 h-[70dvh] xl:h-[60dvh] flex items-center justify-center">
                 <div className="max-w-[900px] grid grid-cols-1 md:grid-cols-2 gap-10 items-center pt-40">
                 {/* Text Section */}
                 <div 
