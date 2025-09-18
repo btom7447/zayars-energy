@@ -67,7 +67,7 @@ export default function Header() {
                     aria-label="Toggle Menu"
                 >
                     {isOriginalOpen ? (
-                        <X size={25} />
+                        <X size={20} />
                         ) : (
                         <Image
                             src={scrolled ? "/images/icons/menu-icon-two.png" : "/images/icons/menu-icon.png"}
@@ -112,7 +112,7 @@ export default function Header() {
                     aria-label="Toggle Menu"
                 >
                     {isFixedOpen ? (
-                        <X size={25} />
+                        <X size={20} />
                         ) : (
                         <Image
                             src="/images/icons/menu-icon-two.png"

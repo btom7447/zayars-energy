@@ -81,7 +81,7 @@ export default function HeroSection() {
                 <h1
                     data-aos="fade-left"
                     data-aos-delay="300"
-                    className="font-poppins text-yellow-300 text-4xl lg:text-9xl xl:text-[120px] font-extrabold mb-5 lg:mb-10"
+                    className="font-poppins text-yellow-300 text-5xl lg:text-9xl xl:text-[120px] font-extrabold mb-5 lg:mb-10"
                 >
                     Global Energy
                 </h1>
