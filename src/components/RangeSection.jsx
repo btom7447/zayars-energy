@@ -3,10 +3,10 @@ export default function RangeSection({ skills, skillsRef, startAnimation, percen
         <div ref={skillsRef} className="space-y-10">
             {skills.map((skill, idx) => (
                 <div key={idx}>
-                    <div className="w-full bg-gray-100 border border-gray-300 h-25 rounded-3xl">
+                    <div className="w-full bg-gray-100 border border-gray-300 h-18 lg:h-25 rounded-3xl">
                         {/* Fill Bar */}
                         <div
-                            className={` bg-blue-950 py-2 px-5 h-25 flex items-center justify-between rounded-3xl`}
+                            className={` bg-blue-950 py-2 px-5 h-18 lg:h-25 flex items-center justify-between rounded-3xl`}
                             style={{
                                 width: startAnimation ? `${skill.percent}%` : 0,
                                 transition: `width 1.5s ease ${idx * 0.3}s`,
@@ -24,7 +24,7 @@ export default function RangeSection({ skills, skillsRef, startAnimation, percen
                                         {skill.title}
                                     </h6>
                                     <p
-                                        className="text-sm lg:text-xl font-light text-white opacity-0"
+                                        className="hidden lg:block text-sm lg:text-xl font-light text-white opacity-0"
                                         style={{
                                             transition: `opacity 0.5s ease ${idx * 0.3 + 0.5}s`,
                                             opacity: 1,

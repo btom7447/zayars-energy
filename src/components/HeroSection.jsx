@@ -77,7 +77,7 @@ export default function HeroSection() {
             </Splide>
 
             {/* Overlay Captions */}
-            <div className="absolute inset-0 py-10 px-5 lg:p-20 flex flex-col items-end justify-center text-white">
+            <div className="absolute inset-0 py-10 px-5 lg:p-20 flex flex-col items-end justify-end lg:justify-center text-white">
                 <h1
                     data-aos="fade-left"
                     data-aos-delay="300"

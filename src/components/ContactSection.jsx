@@ -77,7 +77,7 @@ export default function ContactSection() {
                         data-aos="fade-up"
                         data-aos-delay="600"
                     >
-                        <li className="p-5 rounded-full border border-gray-300 bg-white">
+                        <li className="p-3 lg:p-5 rounded-full border border-gray-300 bg-white">
                             <a
                                 href="https://external-website.com"
                                 target="_blank"
@@ -89,11 +89,11 @@ export default function ContactSection() {
                                     alt="X (Twitter) icon"
                                     width={10}
                                     height={10}
-                                    className="w-7 h-7 object-contain"
+                                    className="w-5 lg:w-7 h-5 lg:h-7 object-contain"
                                 />
                             </a>
                         </li>
-                        <li className="p-5 rounded-full border border-gray-300 bg-white">
+                        <li className="p-3 lg:p-5 rounded-full border border-gray-300 bg-white">
                             <a
                                 href="https://external-website.com"
                                 target="_blank"
@@ -105,11 +105,11 @@ export default function ContactSection() {
                                     alt="Instagram icon"
                                     width={10}
                                     height={10}
-                                    className="w-7 h-7 object-contain"
+                                    className="w-5 lg:w-7 h-5 lg:h-7 object-contain"
                                 />
                             </a>
                         </li>
-                        <li className="p-5 rounded-full border border-gray-300 bg-white">
+                        <li className="p-3 lg:p-5 rounded-full border border-gray-300 bg-white">
                             <a
                                 href="https://external-website.com"
                                 target="_blank"
@@ -121,7 +121,7 @@ export default function ContactSection() {
                                     alt="Website icon"
                                     width={10}
                                     height={10}
-                                    className="w-7 h-7 object-contain"
+                                    className="w-5 lg:w-7 h-5 lg:h-7 object-contain"
                                 />
                             </a>
                         </li>

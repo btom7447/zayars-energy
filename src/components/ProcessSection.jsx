@@ -109,14 +109,14 @@ export default function ProcessSection() {
     return (
         <section
             id="process"
-            className="relative h-[400vh] xl:h-[300vh] bg-gray-100 py-10 px-5 lg:p-20" 
+            className="relative h-[600vh] xl:h-[300vh] bg-gray-100 py-10 px-5 lg:p-20" 
         >
             <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-5 lg:mb-10">
                 How it Works
             </h2>
 
             {/* Sticky container */}
-            <div className="sticky top-50 h-[65dvh] xl:h-[60dvh] flex items-center justify-center">
+            <div className="sticky top-50 h-[70dvh] xl:h-[60dvh] flex items-center justify-center">
                 <div className="max-w-[900px] grid grid-cols-1 md:grid-cols-2 gap-10 items-center pt-40">
                 {/* Text Section */}
                 <div 

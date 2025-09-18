@@ -34,7 +34,7 @@ export default function Header() {
         <>
             {/* Original Header (absolute positioned over hero) */}
             <header
-                className={`absolute top-0 left-0 z-40 w-full flex items-center justify-between px-5 lg:px-10 py-5 border-b transition-all duration-300 ${
+                className={`absolute top-0 left-0 z-40 w-full flex items-center justify-between px-5 lg:px-10 py-2 lg:py-5 border-b transition-all duration-300 ${
                     scrolled
                     ? "bg-white border-gray-200"
                     : "bg-transparent border-white"
@@ -47,7 +47,7 @@ export default function Header() {
                         alt="Zayars Energy Logo"
                         width={24}
                         height={24}
-                        className="w-18 h-auto object-cover"
+                        className="w-12 lg:w-18 h-auto object-cover"
                     />
                     <p
                         className={`font-sans text-2xl ${
@@ -85,7 +85,7 @@ export default function Header() {
 
             {/* Fixed Header (slides down when scrolling) */}
             <header
-                className={`fixed top-0 left-0 z-50 w-screen flex items-center justify-between px-5 lg:px-10 py-5 border-b border-gray-200 bg-white shadow-md transition-transform duration-500 ${
+                className={`fixed top-0 left-0 z-50 w-screen flex items-center justify-between px-5 lg:px-10 py-2 lg:py-5 border-b border-gray-200 bg-white shadow-md transition-transform duration-500 ${
                     showFixedHeader 
                     ? "translate-y-0" 
                     : "-translate-y-full"
@@ -98,7 +98,7 @@ export default function Header() {
                         alt="Zayars Energy Logo"
                         width={24}
                         height={24}
-                        className="w-18 h-auto object-cover"
+                        className="w-12 lg:w-18 h-auto object-cover"
                     />
                     <p className="font-sans text-2xl text-blue-950">
                         Zayars Energy

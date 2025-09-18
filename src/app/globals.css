@@ -163,6 +163,12 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
 }
 
+@media (max-width: 480px) {
+  .splide__arrow {
+    display: none !important;
+  }
+}
+
 .splide__arrow {
   background: #fff !important;
   border: solid 1px var(--primary) !important;
