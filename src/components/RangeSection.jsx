@@ -15,7 +15,7 @@ export default function RangeSection({ skills, skillsRef, startAnimation, percen
                             {startAnimation && percentages[idx] > 43 && (
                                 <div className="flex flex-col items-start">
                                     <h6
-                                        className="text-lg lg:text-xl font-light text-yellow-500 opacity-0"
+                                        className="text-sm lg:text-xl font-light text-yellow-500 opacity-0"
                                         style={{
                                             transition: `opacity 0.5s ease ${idx * 0.3 + 0.5}s`,
                                             opacity: 1,

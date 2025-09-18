@@ -77,7 +77,7 @@ export default function AboutSection() {
                             height={20}
                             className="w-7 h-7 object-cover"
                         />
-                        <p className="text-black text-lg lg:text-xl mt-2">Transparency</p>
+                        <p className="text-black text-sm lg:text-xl mt-2">Transparency</p>
                     </div>
                     <div className="flex flex-col items-center"
                         data-aos="fade-up"
@@ -90,7 +90,7 @@ export default function AboutSection() {
                             height={20}
                             className="w-7 h-7 object-cover"
                         />
-                        <p className="text-black text-lg lg:text-xl mt-2">Speed</p>
+                        <p className="text-black text-sm lg:text-xl mt-2">Speed</p>
                     </div>
                     <div className="flex flex-col items-center"
                         data-aos="fade-up"
@@ -103,7 +103,7 @@ export default function AboutSection() {
                             height={20}
                             className="w-7 h-7 object-cover"
                         />
-                        <p className="text-black text-lg lg:text-xl mt-2">Compliance</p>
+                        <p className="text-black text-sm lg:text-xl mt-2">Compliance</p>
                     </div>
                     <div className="flex flex-col items-center"
                         data-aos="fade-up"
@@ -116,7 +116,7 @@ export default function AboutSection() {
                             height={20}
                             className="w-7 h-7 object-cover"
                         />
-                        <p className="text-black text-lg lg:text-xl mt-2">Excellence</p>
+                        <p className="text-black text-sm lg:text-xl mt-2">Excellence</p>
                     </div>
                 </div>
             </div>

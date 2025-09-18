@@ -140,13 +140,15 @@ export default function ContactSection() {
                     data-aos-delay="800"
                 >
                     <div>
-                        <Image 
-                            src="/images/icons/web-icon.png"
-                            alt="Email icon"
-                            width={10}
-                            height={10}
-                            className="mb-5 w-7 h-7 object-contain"
-                        />
+                        <div className="bg-blue-950 p-3 mb-5 flex items-center">
+                            <Image 
+                                src="/images/icons/mail-icon.png"
+                                alt="Email icon"
+                                width={10}
+                                height={10}
+                                className="w-5 lg:w-7 h-5 lg:h-7 object-contain"
+                            />
+                        </div>
                         <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Email Us</h6>
                         <p className="text-sm lg:text-2xl font-light text-black">info@zayersenergy.com</p>
                     </div>
@@ -158,13 +160,15 @@ export default function ContactSection() {
                     data-aos-delay="900"
                 >
                     <div>
-                        <Image 
-                            src="/images/icons/web-icon.png"
-                            alt="Phone icon"
-                            width={10}
-                            height={10}
-                            className="mb-5 w-7 h-7 object-contain"
-                        />
+                        <div className="bg-blue-950 p-3 mb-5 flex items-center">
+                            <Image 
+                                src="/images/icons/call-icon.png"
+                                alt="Email icon"
+                                width={10}
+                                height={10}
+                                className="w-5 lg:w-7 h-5 lg:h-7 object-contain"
+                            />
+                        </div>
                         <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Call Us</h6>
                         <p className="text-sm lg:text-2xl font-light text-black">+234 5678 9100</p>
                     </div>
@@ -176,13 +180,15 @@ export default function ContactSection() {
                     data-aos-delay="1000"
                 >
                     <div>
-                        <Image 
-                            src="/images/icons/web-icon.png"
-                            alt="Location icon"
-                            width={10}
-                            height={10}
-                            className="mb-5 w-7 h-7 object-contain"
-                        />
+                        <div className="bg-blue-950 p-3 mb-5 flex items-center">
+                            <Image 
+                                src="/images/icons/pin-icon.png"
+                                alt="Email icon"
+                                width={10}
+                                height={10}
+                                className="w-5 lg:w-7 h-5 lg:h-7 object-contain"
+                            />
+                        </div>
                         <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Email Us</h6>
                         <p className="text-sm lg:text-2xl font-light text-black">abc avenue Abuja, Nigeria</p>
                     </div>

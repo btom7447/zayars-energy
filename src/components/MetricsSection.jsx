@@ -44,7 +44,7 @@ export default function MetricsSection() {
                             />
                             +
                         </span>
-                        <p className="text-lg lg:text-2xl text-black font-light mt-2">{metric.title}</p>
+                        <p className="text-sm lg:text-2xl text-black font-light mt-2">{metric.title}</p>
                     </div>
                 ))}
             </div>
