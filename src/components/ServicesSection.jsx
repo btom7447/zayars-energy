@@ -59,7 +59,7 @@ export default function ServicesSection() {
                 {/* Splide Carousel */}
                 <Splide
                     options={{
-                        type: "fade",
+                        type: "slide",
                         rewind: true,
                         autoplay: true,
                         interval: 5000,
