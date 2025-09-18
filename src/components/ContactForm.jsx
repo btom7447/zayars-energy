@@ -32,7 +32,7 @@ export default function ContactForm() {
         value={formData.name}
         onChange={handleChange}
         required
-        className="p-7 rounded-2xl border border-gray-300 bg-white text-black text-xl md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
       />
 
       {/* Email */}
@@ -43,7 +43,7 @@ export default function ContactForm() {
         value={formData.email}
         onChange={handleChange}
         required
-        className="p-7 rounded-2xl border border-gray-300 bg-white text-black text-xl md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
       />
 
       {/* Message */}
@@ -54,7 +54,7 @@ export default function ContactForm() {
         onChange={handleChange}
         required
         rows={5}
-        className="col-span-1 xl:col-span-2 p-7 rounded-2xl border border-gray-300 bg-white text-black text-xl md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="col-span-1 xl:col-span-2 p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
       />
 
       {/* Submit */}

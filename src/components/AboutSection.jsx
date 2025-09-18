@@ -19,12 +19,12 @@ export default function AboutSection() {
     }, []);
 
     return (
-        <section id="about-us" className="p-10 lg:p-20 bg-white grid grid-cols-1 xl:grid-cols-2 items-center gap-10 lg:gap-20">
+        <section id="about-us" className="py-10 px-5 lg:p-20 bg-white grid grid-cols-1 xl:grid-cols-2 items-center gap-10 lg:gap-20">
             <div className="">
                 <h2 
                     data-aos="fade-right"
                     data-aos-delay="100"
-                    className="text-black text-4xl xl:text-6xl font-light text-left mb-10"
+                    className="text-black text-3xl xl:text-6xl font-light text-left mb-5 lg:mb-10"
                 >
                     Who We Are
                 </h2>
@@ -45,14 +45,14 @@ export default function AboutSection() {
                 <p 
                     data-aos="fade-left"
                     data-aos-delay="300"
-                    className="text-2xl text-black font-extralight"
+                    className="text-xl lg:text-2xl text-black font-extralight"
                 >
                     "Driving the future of global energy trade build a secure bridge between energy supply and demand"
                 </p>
                 <span 
                     data-aos="fade-left"
                     data-aos-delay="400"
-                    className="signature text-5xl text-yellow-600 block mt-5"
+                    className="signature text-3xl lg:text-5xl text-yellow-600 block mt-5"
                 >
                     Wisdom Nwachukwu
                 </span>
@@ -77,7 +77,7 @@ export default function AboutSection() {
                             height={20}
                             className="w-7 h-7 object-cover"
                         />
-                        <p className="text-black text-xl mt-2">Transparency</p>
+                        <p className="text-black text-lg lg:text-xl mt-2">Transparency</p>
                     </div>
                     <div className="flex flex-col items-center"
                         data-aos="fade-up"
@@ -90,7 +90,7 @@ export default function AboutSection() {
                             height={20}
                             className="w-7 h-7 object-cover"
                         />
-                        <p className="text-black text-xl mt-2">Speed</p>
+                        <p className="text-black text-lg lg:text-xl mt-2">Speed</p>
                     </div>
                     <div className="flex flex-col items-center"
                         data-aos="fade-up"
@@ -103,7 +103,7 @@ export default function AboutSection() {
                             height={20}
                             className="w-7 h-7 object-cover"
                         />
-                        <p className="text-black text-xl mt-2">Compliance</p>
+                        <p className="text-black text-lg lg:text-xl mt-2">Compliance</p>
                     </div>
                     <div className="flex flex-col items-center"
                         data-aos="fade-up"
@@ -116,7 +116,7 @@ export default function AboutSection() {
                             height={20}
                             className="w-7 h-7 object-cover"
                         />
-                        <p className="text-black text-xl mt-2">Excellence</p>
+                        <p className="text-black text-lg lg:text-xl mt-2">Excellence</p>
                     </div>
                 </div>
             </div>

@@ -11,19 +11,19 @@ export default function Footer() {
                 <div className="xl:col-span-1">
                     <h6 className="text-2xl font-semibold text-yellow-500 mb-5">Company</h6>
                     <ul className="space-y-5">
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#about-us">About Us</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#mission-vision">Mission & Vision</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#services">Services</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#partnership">Partnership</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#make-deal">Make a Deal</Link>
                         </li>
                     </ul>
@@ -33,16 +33,16 @@ export default function Footer() {
                 <div className="xl:col-span-1">
                     <h6 className="text-2xl font-semibold text-yellow-500 mb-5">Resources</h6>
                     <ul className="space-y-5">
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#mission-vision">Insight/Blog</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#services">Reports & Case Studies</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#partnership">FAQs</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#make-deal">News & Media</Link>
                         </li>
                     </ul>
@@ -52,19 +52,19 @@ export default function Footer() {
                 <div className="xl:col-span-1">
                     <h6 className="text-2xl font-semibold text-yellow-500 mb-5">Legal</h6>
                     <ul className="space-y-5">
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#about-us">Terms of use</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#mission-vision">Privacy policy</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#services">Disclaimer</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#partnership">Cookie policy</Link>
                         </li>
-                        <li className="text-white font-light text-2xl hover:text-yellow-400">
+                        <li className="text-white font-light text-lg lg:text-2xl hover:text-yellow-400">
                             <Link href="#make-deal">Regulatory compliance</Link>
                         </li>
                     </ul>
@@ -85,13 +85,13 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="mt-20 w-full flex items-center justify-between">
-                <p className="text-white text-2xl font-light">&copy; {currentYear} Zayars Energy. All rights reserved.</p>
+            <div className="mt-20 w-full flex flex-col xl:flex-row items-center justify-center xl:justify-between">
+                <p className="text-white text-sm lg:text-2xl font-light">&copy; {currentYear} Zayars Energy. All rights reserved.</p>
                 <a
                     href="https://kmini-tech.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-yellow-500 text-2xl font-light"
+                    className="text-yellow-500 text-sm lg:text-2xl font-light"
                 >
                     Kmini Technologies
                 </a>

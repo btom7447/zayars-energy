@@ -26,7 +26,7 @@ export default function MetricsSection() {
     }, []);
 
     return (
-        <section className="bg-gray-100 border-y border-gray-300 p-10 lg:p-20">
+        <section className="bg-gray-100 border-y border-gray-300 py-10 px-5 lg:p-20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 {servicesSlide.map((metric, index) => (
                     <div 
@@ -44,7 +44,7 @@ export default function MetricsSection() {
                             />
                             +
                         </span>
-                        <p className="text-2xl text-black font-light mt-2">{metric.title}</p>
+                        <p className="text-lg lg:text-2xl text-black font-light mt-2">{metric.title}</p>
                     </div>
                 ))}
             </div>

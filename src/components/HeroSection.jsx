@@ -36,7 +36,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section id="home" className="relative w-full h-[70dvh] lg:h-[100dvh] overflow-hidden">
+        <section id="home" className="relative w-full h-[80dvh] lg:h-[100dvh] overflow-hidden">
             <Splide
                 options={{
                     type: "fade",
@@ -51,7 +51,7 @@ export default function HeroSection() {
             >
                 {heroSlides.map((slide, index) => (
                     <SplideSlide key={index}>
-                        <div className="relative w-full h-[70dvh] lg:h-[100dvh]">
+                        <div className="relative w-full h-[80dvh] lg:h-[100dvh]">
                             {/* Background Image */}
                             <Image
                                 src={slide.image}
@@ -77,11 +77,11 @@ export default function HeroSection() {
             </Splide>
 
             {/* Overlay Captions */}
-            <div className="absolute inset-0 p-10 lg:p-20 flex flex-col items-end justify-center text-white">
+            <div className="absolute inset-0 py-10 px-5 lg:p-20 flex flex-col items-end justify-center text-white">
                 <h1
                     data-aos="fade-left"
                     data-aos-delay="300"
-                    className="font-poppins text-yellow-300 text-6xl lg:text-[120px] font-extrabold mb-5 lg:mb-10"
+                    className="font-poppins text-yellow-300 text-4xl lg:text-[120px] font-extrabold mb-5 lg:mb-10"
                 >
                     Global Energy
                 </h1>
@@ -89,7 +89,7 @@ export default function HeroSection() {
                 <p
                     data-aos="fade-left"
                     data-aos-delay="600"
-                    className="font-montserrat text-2xl font-light mb-4 text-center"
+                    className="font-montserrat text-lg lg:text-2xl font-light mb-4 text-center"
                 >
                     Elite brokerage service in crude oil, refined products, natural gas
                     and renewables.

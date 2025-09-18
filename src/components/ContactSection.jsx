@@ -21,9 +21,9 @@ export default function ContactSection() {
     }, []);
 
     return (
-        <section className="p-10 lg:p-20 bg-blue-50">
+        <section className="py-10 px-5 lg:p-20 bg-blue-50">
             <h2 
-                className="text-black text-4xl xl:text-6xl font-light text-left mb-10"
+                className="text-black text-3xl xl:text-6xl font-light text-left mb-5 lg:mb-10"
                 data-aos="fade-right"
                 data-aos-delay="100"
             >
@@ -32,7 +32,7 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
                 <div>
                     <p 
-                        className="max-w-xl text-black text-2xl font-light"
+                        className="max-w-xl text-black text-xl lg:text-2xl font-light"
                         data-aos="fade-right"
                         data-aos-delay="200"
                     >
@@ -41,7 +41,7 @@ export default function ContactSection() {
                     </p>
                     <ul className="my-10 space-y-5">
                         <li 
-                            className="text-2xl text-black font-light flex items-center gap-3"
+                            className="text-lg lg:text-2xl text-black font-light flex items-center gap-3"
                             data-aos="fade-right"
                             data-aos-delay="300"
                         >
@@ -51,7 +51,7 @@ export default function ContactSection() {
                             Personalized Assistance
                         </li>
                         <li 
-                            className="text-2xl text-black font-light flex items-center gap-3"
+                            className="text-lg lg:text-2xl text-black font-light flex items-center gap-3"
                             data-aos="fade-right"
                             data-aos-delay="400"
                         >
@@ -61,7 +61,7 @@ export default function ContactSection() {
                             Timely Response
                         </li>
                         <li 
-                            className="text-2xl text-black font-light flex items-center gap-3"
+                            className="text-lg lg:text-2xl text-black font-light flex items-center gap-3"
                             data-aos="fade-right"
                             data-aos-delay="500"
                         >
@@ -147,8 +147,8 @@ export default function ContactSection() {
                             height={10}
                             className="mb-5 w-7 h-7 object-contain"
                         />
-                        <h6 className="font-semibold text-2xl text-blue-950">Email Us</h6>
-                        <p className="text-2xl font-light text-black">info@zayersenergy.com</p>
+                        <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Email Us</h6>
+                        <p className="text-sm lg:text-2xl font-light text-black">info@zayersenergy.com</p>
                     </div>
                 </div>
                 {/* Call Us */}
@@ -165,8 +165,8 @@ export default function ContactSection() {
                             height={10}
                             className="mb-5 w-7 h-7 object-contain"
                         />
-                        <h6 className="font-semibold text-2xl text-blue-950">Call Us</h6>
-                        <p className="text-2xl font-light text-black">+234 912-345-6789</p>
+                        <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Call Us</h6>
+                        <p className="text-sm lg:text-2xl font-light text-black">+234 5678 9100</p>
                     </div>
                 </div>
                 {/* Visit Us */}
@@ -183,8 +183,8 @@ export default function ContactSection() {
                             height={10}
                             className="mb-5 w-7 h-7 object-contain"
                         />
-                        <h6 className="font-semibold text-2xl text-blue-950">Visit Us</h6>
-                        <p className="text-2xl font-light text-black">abc avenue Abuja, Nigeria</p>
+                        <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Email Us</h6>
+                        <p className="text-sm lg:text-2xl font-light text-black">abc avenue Abuja, Nigeria</p>
                     </div>
                 </div>
             </div>

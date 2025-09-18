@@ -109,14 +109,14 @@ export default function ProcessSection() {
     return (
         <section
             id="process"
-            className="relative h-[300vh] bg-gray-100 p-10 lg:p-20" 
+            className="relative h-[400vh] xl:h-[300vh] bg-gray-100 py-10 px-5 lg:p-20" 
         >
-            <h2 className="text-black text-4xl xl:text-6xl font-light text-center mb-10">
+            <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-5 lg:mb-10">
                 How it Works
             </h2>
 
             {/* Sticky container */}
-            <div className="sticky top-50 h-[60dvh] flex items-center justify-center">
+            <div className="sticky top-50 h-[65dvh] xl:h-[60dvh] flex items-center justify-center">
                 <div className="max-w-[900px] grid grid-cols-1 md:grid-cols-2 gap-10 items-center pt-40">
                 {/* Text Section */}
                 <div 
@@ -124,18 +124,18 @@ export default function ProcessSection() {
                     key={processFlow[activeStep]?.title}
                     className="relative"
                 >
-                    <span data-aos-delay="200" className="absolute -top-30 lg:-top-78 -left-0 lg:-left-60 text-9xl lg:text-[200px] font-bold text-outline">
+                    <span data-aos-delay="200" className="absolute -top-25 lg:-top-78 -left-0 lg:-left-60 text-8xl lg:text-[200px] font-bold text-outline">
                         {processFlow[activeStep]?.step}
                     </span>
-                    <h3 data-aos-delay="500" className="text-black text-2xl lg:text-5xl font-semibold mb-4">
+                    <h3 data-aos-delay="500" className="text-black text-xl lg:text-5xl font-semibold mb-4">
                         {processFlow[activeStep]?.title}
                     </h3>
-                    <p data-aos-delay="500" className="text-2xl font-light text-gray-700 mb-5">
+                    <p data-aos-delay="500" className="text-lg lg:text-2xl font-light text-gray-700 mb-5">
                         {processFlow[activeStep]?.text}
                     </p>
                     <ul data-aos-delay="700" className="list-none text-gray-700 space-y-2">
                         {processFlow[activeStep]?.points.map((point, idx) => (
-                            <li key={idx} className="text-2xl font-light flex items-center gap-2">
+                            <li key={idx} className="text-sm lg:text-2xl font-light flex items-center gap-2">
                                 <DotIcon size={40} />
                                 {point}
                             </li>

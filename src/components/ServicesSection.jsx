@@ -46,8 +46,8 @@ export default function ServicesSection() {
     }, []);
 
     return (
-        <section id="services" className="p-10 lg:p-20 bg-gray-100">
-            <h2 className="text-black text-4xl xl:text-6xl font-light text-center mb-10"
+        <section id="services" className="py-10 px-5 lg:p-20 bg-gray-100">
+            <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-5 lg:mb-10"
                 data-aos="fade-down"
                 data-aos-delay="100"
             >
@@ -55,7 +55,7 @@ export default function ServicesSection() {
             </h2>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 lg:gap-16 items-center">
                 {/* Splide Carousel */}
                 <Splide
                     options={{
@@ -73,14 +73,14 @@ export default function ServicesSection() {
                         <SplideSlide key={index}>
                             <div className="px-15 lg:px-30">
                                 <h5 
-                                    className="text-primary text-3xl lg:text-7xl font-semibold mb-5 text-blue-950 text-heading"
+                                    className="text-primary text-xl lg:text-7xl font-semibold mb-5 text-blue-950 text-heading"
                                     data-aos="fade-right"
                                     data-aos-delay="200"
                                 >
                                     {slide.title}
                                 </h5>
                                 <p 
-                                    className="text-gray-600 font-light text-2xl leading-relaxed"
+                                    className="text-gray-600 font-light text-sm lg:text-2xl leading-relaxed"
                                     data-aos="fade-up"
                                     data-aos-delay="400"
                                 >

@@ -34,7 +34,7 @@ export default function Header() {
         <>
             {/* Original Header (absolute positioned over hero) */}
             <header
-                className={`absolute top-0 left-0 z-40 w-full flex items-center justify-between px-10 py-5 border-b transition-all duration-300 ${
+                className={`absolute top-0 left-0 z-40 w-full flex items-center justify-between px-5 lg:px-10 py-5 border-b transition-all duration-300 ${
                     scrolled
                     ? "bg-white border-gray-200"
                     : "bg-transparent border-white"
@@ -74,7 +74,7 @@ export default function Header() {
                             alt="Menu Icon"
                             width={24}
                             height={24}
-                            className="w-7 h-auto object-cover"
+                            className="w-5 h-auto object-cover"
                         />
                     )}
                 </button>
@@ -85,7 +85,7 @@ export default function Header() {
 
             {/* Fixed Header (slides down when scrolling) */}
             <header
-                className={`fixed top-0 left-0 z-50 w-screen flex items-center justify-between px-10 pr-15 py-5 border-b border-gray-200 bg-white shadow-md transition-transform duration-500 ${
+                className={`fixed top-0 left-0 z-50 w-screen flex items-center justify-between px-5 lg:px-10 py-5 border-b border-gray-200 bg-white shadow-md transition-transform duration-500 ${
                     showFixedHeader 
                     ? "translate-y-0" 
                     : "-translate-y-full"
@@ -119,7 +119,7 @@ export default function Header() {
                             alt="Menu Icon"
                             width={24}
                             height={24}
-                            className="w-7 h-auto object-cover"
+                            className="w-5 h-auto object-cover"
                         />
                     )}
                 </button>

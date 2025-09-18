@@ -67,8 +67,8 @@ export default function WhyZayars() {
     }, []);
 
     return (
-        <section id="why-us" className="p-10 lg:p-20 bg-white border-t border-gray-300">
-            <h2 className="text-black text-4xl xl:text-6xl font-light text-center mb-10">
+        <section id="why-us" className="py-10 px-5 lg:p-20 bg-white border-t border-gray-300">
+            <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-5 lg:mb-10">
                 Why Zarays Energy?
             </h2>            
             <RangeSection
