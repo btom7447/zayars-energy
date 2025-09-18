@@ -154,7 +154,7 @@ export default function ProcessSection() {
                         alt={processFlow[activeStep]?.title}
                         width={400}
                         height={400}
-                        className="rounded-xl h-[200px] object-cover"
+                        className="rounded-xl h-[140px] lg:h-[200px] object-cover"
                     />
                 </div>
                 </div>

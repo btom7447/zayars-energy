@@ -93,7 +93,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-yellow-500 text-sm lg:text-2xl font-light"
                 >
-                    Kmini Technologies
+                    By Kmini Technologies
                 </a>
                 
             </div>

@@ -98,7 +98,7 @@ export default function HeroSection() {
                 <div
                     data-aos="fade-left"
                     data-aos-delay="900"
-                    className="mt-10 flex flex-col lg:flex-row items-center gap-5 lg:gap-10"
+                    className="mt-5 lg:mt-10 flex flex-col lg:flex-row items-center gap-5 lg:gap-10"
                 >
                     <CustomButton variant="white">Partner with Us</CustomButton>
                     <CustomButton variant="black">Make a Deal</CustomButton>
