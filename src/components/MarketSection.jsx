@@ -10,9 +10,14 @@ export default function MarketSection() {
                 className="object-contain"
             />
             <div>
-                <h2 className="hidden xl:block absolute top-10 lg:top-20 left-10 lg:left-20 text-black text-4xl xl:text-6xl font-light text-left">
-                    Regions We Operate
-                </h2>
+                <div className="absolute top-10 lg:top-20 left-10 lg:left-20">
+                    <span className="slate text-black text-md lg:text-xl text-center">
+                        [Our Markets]
+                    </span>
+                    <h2 className="hidden xl:block text-black text-4xl xl:text-6xl font-light text-left">
+                        Regions We Operate
+                    </h2>
+                </div>
                 <p className="hidden xl:block mx-10 lg:mx-0 max-w-xl absolute bottom-10 lg:bottom-20 right-0 lg:right-20 text-2xl font-light text-black">
                     At Zayars Energy, we operate across key regions and industries, ensuring our clients have access to reliable and compliant energy trade opportunities worldwide.
                 </p>

@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 .cssbuttons-io-button.white-variant {
   background: white;
   color: black;
-  box-shadow: inset 0 0 1.6em -0.2em #ccc;
+  box-shadow: inset 0 0 1.0em -0.1em #ccc;
 }
 .cssbuttons-io-button.gold-variant {
   background: white;
@@ -173,6 +173,9 @@ h1, h2, h3, h4, h5, h6 {
   .splide__arrow {
     display: none !important;
   }
+  .splide__pagination {
+    bottom: -2.5em !important;
+  }
 }
 
 .splide__arrow {
@@ -184,10 +187,6 @@ h1, h2, h3, h4, h5, h6 {
 .splide__arrow--next {
   right: 0em !important;
 }
-.splide__arrow--prev {
-  left: 0em !important;
-}
-
 .text-outline {
   color: transparent;                 
   -webkit-text-stroke: 2px #d9d9d9; 

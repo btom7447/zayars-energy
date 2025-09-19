@@ -1,7 +1,10 @@
-// NavMenu.jsx
-"use client"
+"use client";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Info, Wrench, Phone, Twitter, Facebook, Instagram, HouseIcon, InfoIcon, ChartNoAxesColumn, ZapIcon, ShieldCheck, SplitIcon, UsersIcon } from "lucide-react";
+import { 
+  Home, Info, Wrench, Phone, Twitter, Facebook, Instagram, 
+  HouseIcon, InfoIcon, ChartNoAxesColumn, ZapIcon, ShieldCheck, SplitIcon, UsersIcon 
+} from "lucide-react";
 
 const menuItems = [
   { name: "Home", href: "#home", icon: HouseIcon },
@@ -20,6 +23,29 @@ const socialHandles = [
 ];
 
 export default function NavMenu({ isOpen, setIsOpen }) {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let current = "";
+      menuItems.forEach(({ href }) => {
+        const section = document.querySelector(href);
+        if (!section) return;
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const scrollY = window.scrollY + window.innerHeight / 3; // tweak trigger point
+        if (scrollY >= top && scrollY < top + height) {
+          current = href;
+        }
+      });
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -38,7 +64,8 @@ export default function NavMenu({ isOpen, setIsOpen }) {
                 <li key={name}>
                   <a
                     href={href}
-                    className="flex items-center gap-2 text-lg text-white hover:text-yellow-300 transition-colors"
+                    className={`flex items-center gap-2 text-lg transition-colors
+                      ${activeSection === href ? "text-yellow-300 font-semibold" : "text-white hover:text-yellow-300"}`}
                   >
                     <Icon size={20} strokeWidth={1} />
                     {name}

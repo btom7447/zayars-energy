@@ -111,8 +111,11 @@ export default function ProcessSection() {
             id="process"
             className="relative h-[600vh] xl:h-[300vh] bg-gray-100 py-10 px-5 lg:p-20" 
         >
+            <span className="block mx-auto slate text-black text-md lg:text-xl text-center">
+                [How it Works]
+            </span>
             <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-5 lg:mb-10">
-                How it Works
+                The Process
             </h2>
 
             {/* Sticky container */}

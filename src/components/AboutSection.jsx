@@ -26,7 +26,9 @@ export default function AboutSection() {
                     data-aos-delay="100"
                     className="text-black text-3xl xl:text-6xl font-light text-left mb-5 lg:mb-10"
                 >
-                    Who We Are
+                    Who <br />
+                    <span className="text-md lg:text-xl">[About Us]</span>
+                    We Are
                 </h2>
                 <div 
                     data-aos="zoom-in"

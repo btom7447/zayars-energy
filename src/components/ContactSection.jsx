@@ -22,6 +22,9 @@ export default function ContactSection() {
 
     return (
         <section className="py-10 px-5 lg:p-20 bg-blue-50">
+            <span className="slate text-black text-md lg:text-xl text-left">
+                [Contact Us]
+            </span>
             <h2 
                 className="text-black text-3xl xl:text-6xl font-light text-left mb-5 lg:mb-10"
                 data-aos="fade-right"

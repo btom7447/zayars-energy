@@ -47,6 +47,9 @@ export default function ServicesSection() {
 
     return (
         <section id="services" className="py-10 px-5 lg:p-20 bg-gray-100">
+            <span className="block mx-auto slate text-black text-md lg:text-xl text-center">
+                [Services]
+            </span>
             <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-5 lg:mb-20"
                 data-aos="fade-down"
                 data-aos-delay="100"
@@ -55,7 +58,7 @@ export default function ServicesSection() {
             </h2>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-18 lg:gap-16 items-center">
                 {/* Splide Carousel */}
                 <Splide
                     options={{
@@ -64,7 +67,7 @@ export default function ServicesSection() {
                         autoplay: true,
                         interval: 5000,
                         arrows: true,
-                        pagination: false,
+                        pagination: true,
                         speed: 800,
                     }}
                     className="xl:col-span-2"
