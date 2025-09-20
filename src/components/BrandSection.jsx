@@ -10,6 +10,7 @@ const brandSlides = [
   { name: "wephco", image: "/images/brands/brand-three.png" },
   { name: "AA Rano", image: "/images/brands/brand-four.png" },
   { name: "DAMAC", image: "/images/brands/brand-five.png" },
+  { name: "Aramaco", image: "/images/brands/brand-six.webp" },
 ];
 
 export default function BrandSection() {

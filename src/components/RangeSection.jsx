@@ -36,7 +36,7 @@ export default function RangeSection({ skills, skillsRef, startAnimation, percen
                                 </div>
                             )}
                             <span
-                                className="text-2xl font-bold opacity-0"
+                                className="text-2xl lg:text-5xl font-light opacity-0"
                                 style={{
                                     transition: `opacity 0.5s ease ${idx * 0.3 + 0.5}s`,
                                     opacity: 1,

@@ -63,7 +63,7 @@ export default function AboutSection() {
                     data-aos-delay="500"
                     className="text-black text-2xl uppercase mt-2"
                 >
-                    CEO
+                    General Manager
                 </h6>
                 <div 
                     className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-10"
