@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Home, Info, Wrench, Phone, Twitter, Facebook, Instagram, 
+  Twitter, Facebook, Instagram, 
   HouseIcon, InfoIcon, ChartNoAxesColumn, ZapIcon, ShieldCheck, SplitIcon, UsersIcon 
 } from "lucide-react";
 

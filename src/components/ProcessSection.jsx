@@ -90,7 +90,7 @@ export default function ProcessSection() {
         {processFlow.map((step, index) => (
           <div
             key={index}
-            className="sticky top-20 lg:top-32 xl:top-40 w-full bg-white p-5 lg:p-10 flex flex-col lg:flex-row gap-5 items-center transition-all duration-500"
+            className="sticky top-27 lg:top-32 xl:top-40 w-full bg-white p-5 lg:p-10 flex flex-col lg:flex-row gap-5 items-center transition-all duration-500"
             style={{ zIndex: index + 1 }}
             data-aos="fade-up"
           >
@@ -125,7 +125,7 @@ export default function ProcessSection() {
                 alt={step.title}
                 width={400}
                 height={400}
-                className="rounded-full w-50 h-50 object-cover"
+                className="rounded-full w-40 h-40 lg:w-50 lg:h-50 object-cover"
               />
             </div>
           </div>

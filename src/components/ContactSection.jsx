@@ -192,7 +192,7 @@ export default function ContactSection() {
                                 className="w-5 lg:w-7 h-5 lg:h-7 object-contain"
                             />
                         </div>
-                        <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Email Us</h6>
+                        <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Our Location</h6>
                         <p className="text-sm lg:text-2xl font-light text-black">abc avenue Abuja, Nigeria</p>
                     </div>
                 </div>
