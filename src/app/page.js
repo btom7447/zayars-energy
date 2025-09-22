@@ -7,6 +7,7 @@ import MetricsSection from "@/components/MetricsSection";
 import ProcessSection from "@/components/ProcessSection";
 import ServicesSection from "@/components/ServicesSection";
 import WhyZayars from "@/components/WhyZayars";
+import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <MarketSection />
       <WhyZayars />
       <BrandSection />
+      <BlogSection />
       <ContactSection />
     </>
   );
