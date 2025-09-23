@@ -12,7 +12,7 @@ export default function BlogSection() {
     async function fetchPosts() {
       try {
         const baseUrl =
-          process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+          process.env.NEXT_PUBLIC_BASE_URL;
         const res = await fetch(`${baseUrl}/api/posts`, { cache: "no-store" });
 
         if (!res.ok) throw new Error("Failed to fetch posts");
@@ -98,7 +98,7 @@ export default function BlogSection() {
           >
             <motion.div
               layoutId={`card-${selectedPost._id}`}
-              className="bg-white w-full max-w-[90%] lg:max-w-5xl max-h-[90%] overflow-y-auto rounded-3xl relative"
+              className="bg-white w-full max-w-[90%] max-h-[95%] overflow-y-auto rounded-3xl relative"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
