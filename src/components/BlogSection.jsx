@@ -11,9 +11,7 @@ export default function BlogSection() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const baseUrl =
-          process.env.NEXT_PUBLIC_BASE_URL;
-        const res = await fetch(`${baseUrl}/api/posts`, { cache: "no-store" });
+        const res = await fetch("/api/posts", { cache: "no-store" });
 
         if (!res.ok) throw new Error("Failed to fetch posts");
 
