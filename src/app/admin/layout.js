@@ -63,14 +63,14 @@ export default function AdminLayout({ children }) {
                         <h3 className="text-black text-xl text-center mb-10">Login</h3>
                         <input
                             type="password"
-                            className="border p-4 w-full rounded-lg text-black border-gray-300 focus:ring focus:ring-gray-200 outline-yellow-300"
+                            className="w-full p-4 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                             placeholder="Enter admin password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <button
                             type="submit"
-                            className="bg-blue-950 hover:bg-blue-700 text-white w-full py-4 rounded font-medium transition cursor-pointer"
+                            className="bg-blue-950 hover:bg-blue-700 text-white w-full p-4 rounded-2xl font-medium transition cursor-pointer"
                         >
                             Login
                         </button>

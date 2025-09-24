@@ -82,7 +82,10 @@ export default function ProcessSection() {
       <span className="block mx-auto text-black text-md lg:text-xl text-center">
         [How it Works]
       </span>
-      <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-10">
+      <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-10"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
         The Process
       </h2>
 

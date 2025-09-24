@@ -1,5 +1,6 @@
 "use client";
 
+import { XIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function CreatePostModal({ onClose, refreshPosts }) {
@@ -39,42 +40,84 @@ export default function CreatePostModal({ onClose, refreshPosts }) {
 
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-      <div className="bg-white text-black p-6 rounded shadow-lg max-w-lg w-full space-y-4">
-        <h2 className="text-xl font-semibold">Create New Post</h2>
+      <div className="bg-white text-black p-5 rounded-3xl shadow-lg max-w-7xl w-[90%] max-h-[90%] overflow-y-auto space-y-4">
+        <div className="flex items-center justify-between gap-10">
+          <h2 className="text-2xl font-semibold">Create Post</h2>
+          <button type="button"
+            className="text-black cursor-pointer"
+            onClick={onClose}
+          >
+            <XIcon size={25} strokeWidth={1} />
+          </button>
+        </div>
         <form onSubmit={handleSubmit} className="space-y-3">
-          <input
-            type="text"
-            placeholder="Title"
-            className="border p-2 w-full rounded"
-            value={form.title}
-            onChange={(e) => setForm({ ...form, title: e.target.value })}
-          />
-          <textarea
-            placeholder="Content"
-            className="border p-2 w-full rounded"
-            rows="5"
-            value={form.content}
-            onChange={(e) => setForm({ ...form, content: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="Author"
-            className="border p-2 w-full rounded"
-            value={form.author}
-            onChange={(e) => setForm({ ...form, author: e.target.value })}
-          />
-
-          <input type="file" onChange={handleUpload} />
-          {uploading && <p className="text-yellow-600">Uploading...</p>}
-          {form.imageUrl && (
-            <img
-              src={form.imageUrl}
-              alt="Preview"
-              className="w-32 h-32 object-cover rounded"
+          <div className="mb-5">
+            <label
+              htmlFor="photo"
+              className="block text-xl font-semibold text-gray-800 mb-2"
+            >
+              Photo
+            </label>
+            <input id="photo" type="file" onChange={handleUpload} />
+            {uploading && <p className="text-yellow-600">Uploading...</p>}
+              {form.imageUrl && (
+                <img
+                  src={form.imageUrl}
+                  alt="Preview"
+                  className="w-32 h-32 object-cover rounded"
+                />
+              )
+            }
+          </div>
+          <div className="mb-5">
+            <label
+              htmlFor="title"
+              className="block text-xl font-semibold text-gray-800 mb-2"
+            >
+              Title
+            </label>
+            <input
+              id="title"
+              type="text"
+              placeholder="Title"
+              className="w-full p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-yellow-500"
+              value={form.title}
+              onChange={(e) => setForm({ ...form, title: e.target.value })}
             />
-          )}
+          </div>
 
-          {/* ✅ Published toggle */}
+          <div className="mb-5">
+            <label
+              htmlFor="content"
+              className="block text-xl font-semibold text-gray-800 mb-2"
+            >
+              Content
+            </label>
+            <textarea
+              id="content"
+              placeholder="Content"
+              className="w-full p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              rows="5"
+              value={form.content}
+              onChange={(e) => setForm({ ...form, content: e.target.value })}
+            />
+          </div>
+          <div className="mb-5">
+            <label
+              htmlFor="author"
+              className="block text-xl font-semibold text-gray-800 mb-2"
+            >
+              Author
+            </label>
+            <input
+              id="author"
+              type="text"
+              placeholder="Author"
+              value={form.author}
+              onChange={(e) => setForm({ ...form, author: e.target.value })}
+              className="w-full p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-yellow-500"
+            />
+          </div>
           <label className="flex items-center space-x-2">
             <input
               type="checkbox"
@@ -85,18 +128,17 @@ export default function CreatePostModal({ onClose, refreshPosts }) {
             />
             <span>Published</span>
           </label>
-
           <div className="flex justify-end space-x-3">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 bg-gray-400 rounded text-white"
+              className="py-5 px-5 bg-gray-400 hover:bg-gray-700 text-white rounded-xl font-medium transition cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-green-600 text-white rounded"
+              className="py-5 px-5 bg-blue-950 hover:bg-blue-800 text-white rounded-xl font-medium transition cursor-pointer"
             >
               Create Post
             </button>

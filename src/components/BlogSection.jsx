@@ -3,25 +3,55 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ClockIcon, X } from "lucide-react";
+import MoonLoader from "react-spinners/MoonLoader";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function BlogSection() {
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
+    let timeout = setTimeout(() => {
+      if (loading) {
+        setError("Something went wrong.");
+        setLoading(false);
+      }
+    }, 5000); 
+
     async function fetchPosts() {
       try {
         const res = await fetch("/api/posts", { cache: "no-store" });
-
         if (!res.ok) throw new Error("Failed to fetch posts");
-
         const data = await res.json();
-        setPosts(data);
+
+        const publishedPosts = data
+          .filter((post) => post.published === true)
+          .slice(0, 6);
+
+        setPosts(publishedPosts);
       } catch (err) {
         console.error(err);
+        setError("Failed to load blog posts.");
+      } finally {
+        setLoading(false);
+        clearTimeout(timeout);
       }
     }
+
     fetchPosts();
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800, 
+      easing: "ease-out-cubic",
+      once: true, 
+    });
   }, []);
 
   // Friendly date formatter
@@ -39,51 +69,72 @@ export default function BlogSection() {
       <span className="block mx-auto text-black text-md lg:text-xl text-center">
         [Blog]
       </span>
-      <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-10 xl:mb-20">
+      <h2 className="text-black text-3xl xl:text-6xl font-light text-center mb-10 xl:mb-20"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
         Stay Informed
       </h2>
 
+      {/* Loading State */}
+      {loading && (
+        <div className="flex flex-col items-center justify-center py-20">
+          <MoonLoader color="#1d4ed8" size={60} />
+        </div>
+      )}
+
+      {/* Error State */}
+      {!loading && error && (
+        <div className="text-center py-20 text-red-500 font-medium">
+          {error}
+        </div>
+      )}
+
       {/* Blog Grid */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-        {posts.map((post) => (
-          <motion.article
-            layoutId={`card-${post._id}`}
-            key={post._id}
-            className="bg-white rounded-3xl  transition  cursor-pointer"
-            onClick={() => setSelectedPost(post)}
-          >
-            {post.imageUrl && (
-              <motion.img
-                layoutId={`image-${post._id}`}
-                src={post.imageUrl}
-                alt={post.title}
-                className="w-full h-40 lg:h-60 object-cover rounded-3xl mb-4"
-              />
-            )}
-            <div className="p-5">
-              <motion.h2
-                layoutId={`title-${post._id}`}
-                className="text-2xl font-semibold text-gray-900 mb-3"
-              >
-                {post.title}
-              </motion.h2>
-              <p className="text-gray-600 leading-relaxed line-clamp-3">
-                {post.content}
-              </p>
-              <div className="flex items-center justify-between mt-4 text-sm text-gray-500">
-                <p className="text-sm text-gray-600 flex items-center gap-3">
-                  <ClockIcon size={20} strokeWidth={1} />
-                  {formatDate(post.createdAt)}
+      {!loading && !error && (
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+          {posts.map((post, index) => (
+            <motion.article
+              layoutId={`card-${post._id}`}
+              key={post._id}
+              className="bg-white rounded-3xl transition cursor-pointer"
+              onClick={() => setSelectedPost(post)}
+              data-aos="fade-up"
+              data-aos-delay={index * 150} 
+            >
+              {post.imageUrl && (
+                <motion.img
+                  layoutId={`image-${post._id}`}
+                  src={post.imageUrl}
+                  alt={post.title}
+                  className="w-full h-40 lg:h-60 object-cover rounded-3xl mb-4"
+                />
+              )}
+              <div className="p-5">
+                <motion.h2
+                  layoutId={`title-${post._id}`}
+                  className="text-2xl font-semibold text-gray-900 mb-3"
+                >
+                  {post.title}
+                </motion.h2>
+                <p className="text-gray-600 leading-relaxed line-clamp-3">
+                  {post.content}
                 </p>
-                <span className="flex items-center text-lg text-blue-600 hover:text-blue-800 font-medium">
-                  Read Post
-                  <ArrowUpRight size={25} strokeWidth={1} />
-                </span>
+                <div className="flex items-center justify-between mt-4 text-sm text-gray-500">
+                  <p className="text-sm text-gray-600 flex items-center gap-3">
+                    <ClockIcon size={20} strokeWidth={1} />
+                    {formatDate(post.createdAt)}
+                  </p>
+                  <span className="flex items-center text-lg text-blue-600 hover:text-blue-800 font-medium">
+                    Read Post
+                    <ArrowUpRight size={25} strokeWidth={1} />
+                  </span>
+                </div>
               </div>
-            </div>
-          </motion.article>
-        ))}
-      </div>
+            </motion.article>
+          ))}
+        </div>
+      )}
 
       {/* Modal */}
       <AnimatePresence>
@@ -102,7 +153,6 @@ export default function BlogSection() {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", stiffness: 120 }}
             >
-              {/* Close button */}
               <button
                 onClick={() => setSelectedPost(null)}
                 className="absolute top-5 right-5 text-white cursor-pointer"

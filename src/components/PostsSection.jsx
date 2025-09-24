@@ -1,6 +1,7 @@
 "use client";
 
 import { ClockIcon, DeleteIcon, LayoutGridIcon, LayoutListIcon, PencilLineIcon, PenToolIcon, PlusIcon } from "lucide-react";
+import Image from "next/image";
 
 export default function PostsSection({
     posts,
@@ -15,6 +16,7 @@ export default function PostsSection({
         await fetch(`/api/posts/${id}`, { method: "DELETE" });
         fetchPosts();
     };
+
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString("en-US", {
