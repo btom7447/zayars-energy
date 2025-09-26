@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { MoonLoader } from "react-spinners";
+import { toast } from "react-toastify";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -8,15 +10,37 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // later: send to API or Formspree/Airtable
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        toast.success("Message sent!");
+        setFormData({ name: "", email: "", message: "" }); // reset form
+      } else {
+        toast.error(data.message || "⚠️ Something went wrong");
+      }
+    } catch (err) {
+      console.error("❌ Error:", err);
+      toast.error("Server error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -60,9 +84,10 @@ export default function ContactForm() {
       {/* Submit */}
       <button
         type="submit"
-        className="col-span-1 xl:col-span-2 bg-blue-950 hover:bg-yellow-600 text-white p-4 lg:p-7 rounded-2xl font-medium text-xl md:text-2xl transition-colors duration-300"
+        disabled={loading}
+        className="col-span-1 xl:col-span-2 flex items-center justify-center bg-blue-950 hover:bg-yellow-600 text-white p-4 lg:p-7 rounded-2xl font-medium text-xl md:text-2xl transition-colors duration-300"
       >
-        Submit
+        {loading ? <MoonLoader size={20} color="#fff" /> : "Submit"}
       </button>
     </form>
   );

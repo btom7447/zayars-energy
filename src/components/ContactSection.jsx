@@ -137,7 +137,8 @@ export default function ContactSection() {
             </div>
             <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
                 {/* Email Us */}
-                <div 
+                <a
+                    href="mailto:info@zayersenergy.com"
                     className="p-5 rounded-2xl flex flex-col items-start border border-gray-300 bg-white cursor-pointer"
                     data-aos="fade-up"
                     data-aos-delay="800"
@@ -155,9 +156,10 @@ export default function ContactSection() {
                         <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Email Us</h6>
                         <p className="text-sm lg:text-2xl font-light text-black">info@zayersenergy.com</p>
                     </div>
-                </div>
+                </a>
                 {/* Call Us */}
-                <div 
+                <a 
+                href="tel:+2347075884655"
                     className="p-5 rounded-2xl flex flex-col items-start border border-gray-300 bg-white cursor-pointer"
                     data-aos="fade-up"
                     data-aos-delay="900"
@@ -173,11 +175,14 @@ export default function ContactSection() {
                             />
                         </div>
                         <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Call Us</h6>
-                        <p className="text-sm lg:text-2xl font-light text-black">+234 5678 9100</p>
+                        <p className="text-sm lg:text-2xl font-light text-black">+234 707 588 4655</p>
                     </div>
-                </div>
+                </a>
                 {/* Visit Us */}
-                <div 
+                <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=abc+avenue+Abuja+Nigeria"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-5 rounded-2xl flex flex-col items-start border border-gray-300 bg-white cursor-pointer"
                     data-aos="fade-up"
                     data-aos-delay="1000"
@@ -195,7 +200,7 @@ export default function ContactSection() {
                         <h6 className="font-semibold text-lg lg:text-2xl text-blue-950">Our Location</h6>
                         <p className="text-sm lg:text-2xl font-light text-black">abc avenue Abuja, Nigeria</p>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
     )

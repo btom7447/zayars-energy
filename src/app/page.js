@@ -8,14 +8,18 @@ import ProcessSection from "@/components/ProcessSection";
 import ServicesSection from "@/components/ServicesSection";
 import WhyZayars from "@/components/WhyZayars";
 import BlogSection from "@/components/BlogSection";
+import TeamSection from "@/components/TeamSection";
+import PartnersSection from "@/components/PartnersSection";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <AboutSection />
+      <TeamSection />
       <ServicesSection />
       <MetricsSection />
+      <PartnersSection />
       <ProcessSection />
       <MarketSection />
       <WhyZayars />

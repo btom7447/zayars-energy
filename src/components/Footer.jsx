@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import NewsletterForm from "./NewsletterForm";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -70,20 +70,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 
-                {/* Newsletter Section - spans 2 columns on xl screens */}
-                <div className="md:col-span-2 lg:col-span-2 xl:col-span-2">
-                    <h6 className="text-2xl font-light text-blue-300 mb-5">Keep me Updated</h6>
-                    <div className="max-w-lg flex items-center justify-between rounded-full border border-gray-300 bg-white p-1">
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="text-black text-lg md:text-xl xl:text-2xl font-light p-3 md:p-5 w-full focus:outline-none bg-transparent"
-                        />
-                        <button className="p-3 md:p-5 bg-yellow-500 text-blue-950 hover:bg-blue-950 hover:text-yellow-500 rounded-full cursor-pointer transition-colors duration-300 flex-shrink-0">
-                            <ArrowUpRight size={25} strokeWidth={1} />
-                        </button>
-                    </div>
-                </div>
+                <NewsletterForm />
             </div>
             <div className="mt-20 w-full flex flex-col xl:flex-row items-center justify-center xl:justify-between">
                 <p className="text-white text-sm lg:text-2xl font-light">&copy; {currentYear} Zayars Energy. All rights reserved.</p>

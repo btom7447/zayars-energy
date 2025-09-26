@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Twitter, Facebook, Instagram, 
-  HouseIcon, InfoIcon, ChartNoAxesColumn, ZapIcon, ShieldCheck, SplitIcon, UsersIcon 
+  HouseIcon, InfoIcon, ChartNoAxesColumn, ZapIcon, ShieldCheck, SplitIcon, UsersIcon, 
+  HandshakeIcon
 } from "lucide-react";
 
 const menuItems = [
@@ -12,8 +13,10 @@ const menuItems = [
   { name: "About Us", href: "#about-us", icon: InfoIcon },
   { name: "Why Us", href: "#why-us", icon: ShieldCheck },
   { name: "Services", href: "#services", icon: ZapIcon },
-  { name: "Partners", href: "#partners", icon: UsersIcon },
+  { name: "Partners", href: "#partners", icon: HandshakeIcon },
   { name: "Process", href: "#process", icon: SplitIcon },
+  { name: "Team", href: "#team", icon: UsersIcon },
+
 ];
 
 const socialHandles = [

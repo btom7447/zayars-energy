@@ -2,6 +2,8 @@ import { Poppins, Montserrat, Babylonica, Merriweather } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Load fonts with proper configuration
 const poppins = Poppins({
@@ -44,6 +46,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="bg-white">{children}</main>
         <Footer />
+        <ToastContainer position="top-right" autoClose={3000} />
       </body>
     </html>
   );

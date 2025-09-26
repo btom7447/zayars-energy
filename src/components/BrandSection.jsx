@@ -15,7 +15,7 @@ const brandSlides = [
 
 export default function BrandSection() {
   return (
-    <section id="partners" className="px-10 lg:px-20 xl:px-30 py-10 bg-gray-50 border-y border-gray-300">
+    <section className="px-10 lg:px-20 xl:px-30 py-10 bg-gray-50 border-y border-gray-300">
         <Splide
           options={{
             type: "loop",
