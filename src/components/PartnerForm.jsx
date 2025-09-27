@@ -30,7 +30,7 @@ function CustomSelect({ label, options, value, onChange, name }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="w-full flex justify-between items-center p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light focus:outline-none focus:ring-1 focus:ring-yellow-500"
       >
         {value || label}
         <ChevronDown
@@ -49,7 +49,7 @@ function CustomSelect({ label, options, value, onChange, name }) {
                 onChange({ target: { name, value: option } });
                 setOpen(false);
               }}
-              className={`p-4 lg:p-6 cursor-pointer hover:bg-gray-100 text-lg md:text-xl ${
+              className={`p-4 lg:p-6 cursor-pointer hover:bg-gray-100 text-gray-500 text-lg md:text-xl ${
                 value === option ? "bg-gray-200 font-medium" : ""
               }`}
             >
@@ -132,7 +132,7 @@ export default function PartnerForm() {
         value={formData.organization}
         onChange={handleChange}
         required
-        className="p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-black focus:outline-none focus:ring-1 focus:ring-yellow-500"
       />
 
       {/* Email */}
@@ -143,7 +143,7 @@ export default function PartnerForm() {
         value={formData.email}
         onChange={handleChange}
         required
-        className="p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-black focus:outline-none focus:ring-1 focus:ring-yellow-500"
       />
 
       {/* Phone (optional) */}
@@ -153,7 +153,7 @@ export default function PartnerForm() {
         placeholder="Phone Number (Optional)"
         value={formData.phone}
         onChange={handleChange}
-        className="p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-black focus:outline-none focus:ring-1 focus:ring-yellow-500"
       />
 
       {/* Organization Type (custom select) */}
@@ -173,18 +173,20 @@ export default function PartnerForm() {
           placeholder="Please specify"
           value={formData.otherOrgType}
           onChange={handleChange}
-          className="xl:col-span-2 p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          className="xl:col-span-2 p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-yellow-500"
         />
       )}
 
       {/* Area of Interest (custom select) */}
-      <CustomSelect
-        label="Select Area of Interest"
-        options={interests}
-        value={formData.interest}
-        onChange={handleChange}
-        name="interest"
-      />
+      <div className="xl:col-span-2">
+        <CustomSelect
+          label="Select Area of Interest"
+          options={interests}
+          value={formData.interest}
+          onChange={handleChange}
+          name="interest"
+        />
+      </div>
 
       {/* Message */}
       <textarea
@@ -194,7 +196,7 @@ export default function PartnerForm() {
         onChange={handleChange}
         required
         rows={5}
-        className="col-span-1 xl:col-span-2 p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="col-span-1 xl:col-span-2 p-4 lg:p-7 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-black focus:outline-none focus:ring-1 focus:ring-yellow-500"
       />
 
       {/* Checkbox */}

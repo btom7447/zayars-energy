@@ -6,7 +6,7 @@ import PostsSection from "@/components/PostsSection";
 import EditPostModal from "@/components/EditPostModal";
 import CreatePostModal from "@/components/CreatePostModal";
 
-export default function AdminBlogPage() {
+export default function AdminPage() {
   const [posts, setPosts] = useState([]);
   const [editingPost, setEditingPost] = useState(null);
   const [creating, setCreating] = useState(false);
@@ -23,8 +23,7 @@ export default function AdminBlogPage() {
   }, []);
 
   return (
-    <div className="">
-      <h2 className="text-xl lg:text-3xl text-black font-semibold">Blog Post</h2>
+    <div className="p-6">
       <PostsSection
         posts={posts}
         fetchPosts={fetchPosts}

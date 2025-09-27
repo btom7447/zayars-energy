@@ -1,84 +1,64 @@
 "use client";
 
+import AuthForm from "@/components/AuthForm";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import AdminSidebar from "@/components/AdminSidebar";
 
 export default function AdminLayout({ children }) {
   const [authorized, setAuthorized] = useState(false);
-  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(true);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (password === process.env.NEXT_PUBLIC_ADMIN_PASS) {
-      setAuthorized(true);
-    } else {
-      alert("Wrong password!");
-    }
-  };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setAuthorized(!!user);
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+        Loading...
+      </div>
+    );
+  }
 
   if (!authorized) {
     return (
-      <div className="fixed top-0 left-0 w-screen h-screen bg-white z-50 flex flex-col lg:flex-row">
-        {/* Mobile: Background image wrapper */}
-        <div className="relative w-full h-full lg:w-2/3 lg:h-screen">
+      <div className="fixed inset-0 z-50 bg-white grid grid-cols-1 xl:grid-cols-3 overflow-y-auto">
+        {/* Poster Section */}
+        <div className="xl:col-span-2 relative w-full h-64 lg:h-screen">
           <Image
-            src={"/images/admin-bg.jpg"}
+            src="/images/admin-bg.jpg"
             alt="admin background poster"
             fill
             priority
             className="object-cover"
           />
-
-          {/* Overlay with form (only on mobile) */}
-          <div className="absolute inset-0 flex items-center justify-center p-6 lg:hidden bg-black/40">
-            <form
-              onSubmit={handleLogin}
-              className="bg-white/90 p-8 rounded-xl shadow-md space-y-5 w-full max-w-sm"
-            >
-              <h1 className="text-xl font-semibold text-center">Admin Login</h1>
-              <input
-                type="password"
-                className="border p-3 w-full rounded text-black focus:ring focus:ring-blue-300"
-                placeholder="Enter admin password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded font-medium transition"
-              >
-                Login
-              </button>
-            </form>
-          </div>
         </div>
 
-            {/* Desktop Form Section */}
-            <div className="hidden lg:flex h-screen w-1/3 items-center justify-center p-10 bg-white">
-                    <form
-                        onSubmit={handleLogin}
-                        className="bg-white border border-gray-300 p-10 rounded-lg shadow-md lg:shadow-none space-y-5 w-full"
-                    >
-                        <h1 className="text-black text-3xl font-light text-center mb-10">Zayars Energy</h1>
-                        <h3 className="text-black text-xl text-center mb-10">Login</h3>
-                        <input
-                            type="password"
-                            className="w-full p-4 rounded-2xl border border-gray-300 bg-white text-black text-lg md:text-2xl font-light placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                            placeholder="Enter admin password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <button
-                            type="submit"
-                            className="bg-blue-950 hover:bg-blue-700 text-white w-full p-4 rounded-2xl font-medium transition cursor-pointer"
-                        >
-                            Login
-                        </button>
-                    </form>
-                </div>
-            </div>
-        );
-    }
+        {/* Form Section */}
+        <div className="flex flex-col items-center justify-center w-full p-5 py-15 bg-white">
+          <div className="w-full max-w-md">
+            <AuthForm />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-    return <>{children}</>;
+  return (
+    <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
+      <div className="flex min-h-screen">
+        <AdminSidebar />
+        <main className="flex-1 p-6 bg-gray-50 overflow-y-auto">
+          {children}
+        </main>
+      </div>
+    </div>
+  );
 }

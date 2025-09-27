@@ -21,7 +21,7 @@ export default function ContactSection() {
     }, []);
 
     return (
-        <section className="py-10 px-5 lg:p-20 bg-blue-50">
+        <section id="contact" className="py-10 px-5 lg:p-20 bg-blue-50">
             <span className="slate text-black text-md lg:text-xl text-left">
                 [Contact Us]
             </span>

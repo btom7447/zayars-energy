@@ -192,6 +192,10 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-stroke: 2px #d9d9d9; 
 }
 
+.teamSection .splide__pagination {
+  bottom: -2.5em !important;
+}
+
 /* * {
   outline: red solid 1px;
 } */

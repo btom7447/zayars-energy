@@ -58,7 +58,7 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section id="team" className="py-10 px-5 lg:p-20 bg-gray-100">
+    <section id="team" className="teamSection py-10 px-5 lg:p-20 bg-gray-100">
       <span className="block mx-auto slate text-black text-md lg:text-xl text-center">
         [Our Team]
       </span>
@@ -91,18 +91,17 @@ export default function TeamSection() {
         >
             {teamSlide.map((slide, index) => (
                     <SplideSlide key={index}>
-                        <div className="relative p-5 rounded-2xl border border-gray-300 bg-gray-200 overflow-hidden h-70 lg:h-120">
+                        <div className="relative p-5 rounded-2xl border border-gray-300 bg-gray-200 overflow-hidden h-70 lg:h-100">
                             {/* Image with fill */}
                             <Image
                                 src={slide.img}
                                 alt={slide.name}
                                 fill
-                                className="object-cover object-top rounded-2xl"
+                                className="mt-5 object-cover object-top rounded-2xl"
                             />
 
                             {/* Bottom gradient overlay */}
                             <div className="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-gray-300/80 to-transparent z-10" />
-
                                 {/* Overlay text */}
                                 <div
                                     className="absolute bottom-5 left-5 z-20"
