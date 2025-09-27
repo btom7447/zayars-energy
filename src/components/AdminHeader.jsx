@@ -1,17 +1,29 @@
-import { LogOutIcon, PlusIcon } from "lucide-react";
+import { MenuIcon, XIcon } from "lucide-react";
+import Image from "next/image";
 
-export default function AdminHeader() {
+export default function AdminHeader({ toggleSidebar, sidebarOpen }) {
     return (
-        <header className="bg-gray-800 px-6 py-4 border-b border-gray-700 flex justify-between items-center">
-            <h1 className="text-white text-3xl font-light text-center">Blog Dashboard</h1>
+        <header className="bg-gray-800 px-5 py-2 border-b border-gray-700 flex lg:hidden justify-between items-center">
+            <div className="bg-white rounded-full p-1">
+                <Image
+                    src={"/logo.png"}
+                    alt="Zayars Energy logo"
+                    width={40}
+                    height={40}
+                    className="object-cover rounded-full"
+                />
+            </div>
             <div className="flex gap-5">
                 <button
-                    onClick={() => alert("Add logout logic")}
-                    className="border-1 border-white p-3 rounded-full text-white hover:text-blue-950 hover:bg-white cursor-pointer"
+                    onClick={toggleSidebar}
+                    className="border border-white p-3 rounded-full text-white hover:text-blue-950 hover:bg-white cursor-pointer"
                 >
-                    <LogOutIcon size={20} strokeWidth={1} />
+                    {sidebarOpen ? (
+                        <XIcon size={20} strokeWidth={2} />
+                        ) : (
+                            <MenuIcon size={20} strokeWidth={1} />
+                        )}
                 </button>
-                
             </div>
         </header>
     );

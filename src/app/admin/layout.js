@@ -6,10 +6,14 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import AdminSidebar from "@/components/AdminSidebar";
+import AdminHeader from "@/components/AdminHeader";
+import { AnimatePresence, motion } from "framer-motion";
+import { MoonLoader } from "react-spinners";
 
 export default function AdminLayout({ children }) {
   const [authorized, setAuthorized] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -22,7 +26,7 @@ export default function AdminLayout({ children }) {
   if (loading) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-        Loading...
+        <MoonLoader color="#1d4ed8" size={40} /> 
       </div>
     );
   }
@@ -54,8 +58,41 @@ export default function AdminLayout({ children }) {
   return (
     <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
       <div className="flex h-screen">
-        <AdminSidebar />
-        <main className="flex-1 p-5 lg:p-10 pb-20 bg-gray-50 overflow-y-auto">
+        {/* Sidebar (desktop) */}
+        <div className="hidden lg:block">
+          <AdminSidebar />
+        </div>
+
+        <AnimatePresence>
+          {sidebarOpen && (
+            <div className="fixed inset-0 z-50 lg:hidden">
+              {/* Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed inset-0 bg-black"
+                onClick={() => setSidebarOpen(false)}
+              />
+
+              {/* Sidebar */}
+              <motion.div
+                initial={{ x: "-100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "-100%" }}
+                transition={{ type: "tween", duration: 0.3 }}
+                className="relative z-50 w-64 h-full bg-blue-950"
+              >
+                <AdminSidebar onClose={() => setSidebarOpen(false)} />
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+        
+        {/* Main content */}
+        <main className="flex-1 pb-20 bg-gray-50 overflow-y-auto">
+          <AdminHeader sidebarOpen={sidebarOpen} toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
           {children}
         </main>
       </div>

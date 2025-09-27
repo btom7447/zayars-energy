@@ -7,7 +7,7 @@ import { auth } from "@/lib/firebase";
 import { LogOut, Users, ShoppingBag, Settings, FileTextIcon, MailIcon, UsersIcon, ContactIcon } from "lucide-react";
 import Image from "next/image";
 
-export default function AdminSidebar() {
+export default function AdminSidebar({ onClose }) {
     const pathname = usePathname();
 
     const navItems = [
@@ -18,7 +18,7 @@ export default function AdminSidebar() {
     ];
 
     return (
-        <aside className="py-10 px-5 h-screen w-64 bg-blue-950 text-white flex flex-col">
+        <aside className="py-10 px-5 h-screen w-64 bg-blue-950 text-white flex flex-col justify-between lg:justify-start">
             <div className="flex flex-col gap-5 items-center mb-10">
                 <div className="m-auto bg-white rounded-full p-2">
                     <Image
@@ -34,7 +34,7 @@ export default function AdminSidebar() {
 
 
             {/* Navigation */}
-            <nav className="flex-1">
+            <nav className="flex lg:flex-1">
                 <ul className="space-y-5 text-lg">
                     {navItems.map((item) => {
                         const Icon = item.icon;
@@ -43,6 +43,7 @@ export default function AdminSidebar() {
                             <li key={item.name}>
                                 <Link
                                     href={item.href}
+                                    onClick={onClose} 
                                     className={`flex items-center gap-3  transition ${
                                         isActive
                                         ? "font-bold"

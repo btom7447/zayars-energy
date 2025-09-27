@@ -184,10 +184,10 @@ export default function PostsSection({
     return (
         <div className="mt-5 space-y-10">
             {/* Actions Bar */}
-            <div className="flex justify-between items-center">
-                <div className="flex items-center gap-5 w-1/2">
+            <div className="flex gap-5 flex-wrap justify-between items-center">
+                <div className="flex items-center gap-5 w-full lg:w-1/2">
                     {/* Search */}
-                    <div className="w-1/2 flex items-center border border-gray-300 rounded-xl p-1 px-2">
+                    <div className="w-2/3 lg:w-1/2 flex items-center border border-gray-300 rounded-xl p-1 px-2">
                         <input
                             type="text"
                             placeholder="Search..."
@@ -223,7 +223,7 @@ export default function PostsSection({
                     </div>
                 </div>
 
-                <div className="flex space-x-5">
+                <div className="w-full lg:w-fit flex justify-end lg:justify-start space-x-5">
                     <button
                         onClick={onCreate}
                         className="bg-blue-950 text-white p-2 rounded-xl cursor-pointer"

@@ -23,7 +23,7 @@ export default function AdminBlogPage() {
   }, []);
 
   return (
-    <div className="">
+    <div className="p-5 lg:p-10">
       <h2 className="text-xl lg:text-3xl text-black font-semibold slate">Blog Post</h2>
       <PostsSection
         posts={posts}
