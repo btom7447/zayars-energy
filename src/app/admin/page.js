@@ -24,7 +24,7 @@ export default function AdminBlogPage() {
 
   return (
     <div className="">
-      <h2 className="text-xl lg:text-3xl text-black font-semibold">Blog Post</h2>
+      <h2 className="text-xl lg:text-3xl text-black font-semibold slate">Blog Post</h2>
       <PostsSection
         posts={posts}
         fetchPosts={fetchPosts}

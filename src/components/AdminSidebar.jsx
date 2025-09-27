@@ -35,7 +35,7 @@ export default function AdminSidebar() {
 
             {/* Navigation */}
             <nav className="flex-1">
-                <ul className="space-y-5 text-md">
+                <ul className="space-y-5 text-lg">
                     {navItems.map((item) => {
                         const Icon = item.icon;
                         const isActive = pathname === item.href;
@@ -62,7 +62,7 @@ export default function AdminSidebar() {
             <div className="">
                 <button
                     onClick={() => signOut(auth)}
-                    className="w-full flex items-center gap-3 cursor-pointer text-md"
+                    className="w-full flex items-center gap-3 cursor-pointer text-lg"
                 >
                     <div className="border border-white rounded-full p-2">
                         <LogOut size={20} strokeWidth={1} />
