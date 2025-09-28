@@ -45,7 +45,7 @@ export default function AdminTeamTable({
                                 <th className="p-5 text-left">Full Name</th>
                                 <th className="p-5 text-left">Role</th>
                                 <th className="p-5 text-left">Email</th>
-                                <th className="p-5 text-left">Admin</th>
+                                <th className="p-5 text-left">Admin Access</th>
                                 <th className="p-5 text-left">Visible</th>
                                 <th className="p-5 text-right">Actions</th>
                             </tr>

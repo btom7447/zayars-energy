@@ -95,7 +95,7 @@ export default function TeamSection() {
                   src={member.photoUrl || "/images/team/default.png"}
                   alt={member.fullName}
                   fill
-                  className="mt-5 object-cover object-top rounded-2xl"
+                  className="object-cover object-top rounded-2xl"
                 />
 
                 {/* Bottom gradient overlay */}

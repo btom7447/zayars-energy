@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { 
+    signInWithEmailAndPassword, 
+    createUserWithEmailAndPassword, 
+    sendPasswordResetEmail, 
+    signOut 
+} from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import PasswordInput from "./PasswordInput";
 import { toast } from "react-toastify";
@@ -18,6 +23,18 @@ export default function AuthForm() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const checkAdminAccess = async (email) => {
+        try {
+            const res = await fetch("/api/team");
+            const data = await res.json();
+            const admin = data.find(member => member.email === email && member.adminAccess === true);
+            return !!admin;
+        } catch (error) {
+            console.error("❌ Error checking admin access:", error);
+            return false;
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -25,13 +42,33 @@ export default function AuthForm() {
         if (!formData.email.endsWith("@zayarsenergy.com")) {
             toast.error("Only company emails are allowed!");
             setLoading(false);
-        return;
+            return;
         }
 
         try {
             if (mode === "login") {
                 await signInWithEmailAndPassword(auth, formData.email, formData.password);
-                toast.success("Welcome back!");
+                const hasAccess = await checkAdminAccess(formData.email);
+
+                if (!hasAccess) {
+                    await signOut(auth);
+                    toast.error("You do not have admin access!");
+                } else {
+                    toast.success("Welcome back!");
+                }
+
+            } else if (mode === "signup") {
+                const userCred = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+                // After signup, check admin access
+                const hasAccess = await checkAdminAccess(formData.email);
+
+                if (!hasAccess) {
+                    await signOut(auth);
+                    toast.error("You do not have admin access!");
+                } else {
+                    toast.success("Account created successfully!");
+                }
+
             } else if (mode === "forgot") {
                 await sendPasswordResetEmail(auth, formData.email);
                 toast.success("Password reset email sent!");
@@ -72,7 +109,6 @@ export default function AuthForm() {
             </p>
 
             <div className="my-5 flex flex-col gap-5 w-full">
-                {/* Email input always present */}
                 <input
                     type="email"
                     name="email"
@@ -83,8 +119,7 @@ export default function AuthForm() {
                     className="w-full p-4 rounded-xl border border-gray-300 bg-white text-black text-lg md:text-xl focus:outline-none focus:ring-1 focus:ring-yellow-500"
                 />
 
-                {/* Password input only for login & signup */}
-                {(mode === "login") && (
+                {(mode === "login" || mode === "signup") && (
                     <PasswordInput
                         name="password"
                         value={formData.password}
@@ -111,11 +146,12 @@ export default function AuthForm() {
                         ?  <MoonLoader size={15} color="#fff" /> 
                         : mode === "login"
                         ? "Sign In"
+                        : mode === "signup"
+                        ? "Sign Up"
                         : "Send Reset Email"}
                 </button>
             </div>
 
-            {/* Footer links */}
             <div className="flex flex-col items-center gap-2 text-md text-black">
                 {mode === "forgot" && (
                     <p>
@@ -126,6 +162,18 @@ export default function AuthForm() {
                             className="underline cursor-pointer"
                         >
                             Log in
+                        </button>
+                    </p>
+                )}
+                {mode === "login" && (
+                    <p>
+                        Don't have an account?{" "}
+                        <button
+                            type="button"
+                            onClick={() => setMode("signup")}
+                            className="underline cursor-pointer"
+                        >
+                            Sign up
                         </button>
                     </p>
                 )}
