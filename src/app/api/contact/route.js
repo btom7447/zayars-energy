@@ -29,3 +29,18 @@ export async function POST(req) {
     );
   }
 }
+
+// ✅ GET all messages
+export async function GET() {
+  await connectToDB();
+  try {
+    const contacts = await Contact.find().sort({ createdAt: -1 });
+    return NextResponse.json(contacts);
+  } catch (error) {
+    console.error("❌ Error fetching messages:", error);
+    return NextResponse.json(
+      { message: "Error fetching messages", error: error.message },
+      { status: 500 }
+    );
+  }
+}

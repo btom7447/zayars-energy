@@ -195,6 +195,9 @@ h1, h2, h3, h4, h5, h6 {
 .teamSection .splide__pagination {
   bottom: -2.5em !important;
 }
+/* .dataTable tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+} */
 
 /* * {
   outline: red solid 1px;

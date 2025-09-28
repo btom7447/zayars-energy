@@ -52,8 +52,8 @@ export default function CreatePostModal({ onClose, refreshPosts }) {
     setUploading(false);
   };
 
-  return (
-      <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+    return (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
             <div className="p-5 bg-white text-black rounded-3xl shadow-lg max-w-9xl w-[90%] max-h-[90%] flex flex-col">
                 {/* Header */}
                 <div className="px-5 pt-5 flex items-center justify-between gap-10 mb-4 flex-shrink-0">

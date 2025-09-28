@@ -4,37 +4,37 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import AdminDataTable from "@/components/AdminDataTable";
 
-export default function AdminNewsletterPage() {
-    const [newsletter, setNewsletter] = useState([]);
+export default function AdminPartnersPage() {
+    const [partners, setPartners] = useState([]);
     const [loading, setLoading] = useState(false);
     const [fetching, setFetching] = useState(false);
 
-    // Fetch all Newsleter
-    const fetchNewsletter = async () => {
+    // Fetch all contacts
+    const fetchPartners = async () => {
         setFetching(true);
         try {
-            const res = await fetch("/api/newsletter");
+            const res = await fetch("/api/partner");
             const data = await res.json();
-            setNewsletter(data);
+            setPartners(data);
         } catch (error) {
-            console.error("❌ Failed to fetch newsletter:", error);
-            toast.error("Failed to fetch newsletter");
+            console.error("❌ Failed to fetch partners:", error);
+            toast.error("Failed to fetch partners");
         } finally {
             setFetching(false);
         }
     };
 
-    // Delete Newsletter by id
+    // Delete partners by id
     const handleDelete = async (id) => {
         setLoading(true);
         try {
-            const res = await fetch(`/api/newsletter/${id}`, { method: "DELETE" });
+            const res = await fetch(`/api/partner/${id}`, { method: "DELETE" });
             if (!res.ok) throw new Error("Delete failed");
-            toast.success("message deleted");
-            fetchNewsletter(); // refresh list
+            toast.success("partner deleted");
+            fetchPartners(); // refresh list
         } catch (error) {
-            console.error("❌ Failed to delete newsletter:", error);
-            toast.error("Failed to delete newsletter");
+            console.error("❌ Failed to delete partners:", error);
+            toast.error("Failed to delete partners");
         } finally {
             setLoading(false);
         }
@@ -42,39 +42,51 @@ export default function AdminNewsletterPage() {
 
     const handleCopy = async (row) => {
         try {
-            const res = await fetch(`/api/newsletter/${row._id}`);
+            const res = await fetch(`/api/partner/${row._id}`);
             if (!res.ok) throw new Error("Fetch failed");
             const data = await res.json();
 
             // Format the data you want to copy
             const textToCopy = `
+                Name: ${data.name}
                 Email: ${data.email}
+                phone: ${data.phone}
+                organization: ${data.organization}
+                organization Type: ${data.orgType}
+                Interest: ${data.interest}
+                Message: ${data.message}
+                Date: ${new Date(data.createdAt).toLocaleString()}
             `.trim();
 
             await navigator.clipboard.writeText(textToCopy); // copy to clipboard
-            toast.success("Message copied to clipboard!");
+            toast.success("copied to clipboard!");
         } catch (error) {
-            console.error("❌ Failed to copy contact:", error);
-            toast.error("Failed to copy message");
+            console.error("❌ Failed to copy:", error);
+            toast.error("Failed to copy");
         }
     };
 
+
     useEffect(() => {
-        fetchNewsletter();
+        fetchPartners();
     }, []);
 
-    console.log("Newsletter Data", newsletter)
-
+    // console.log("Contact Data", contacts)
     return (
         <div className="p-5 lg:p-10">
             <h2 className="text-xl lg:text-3xl text-black font-semibold slate mb-10">
-                Newsletter Subscribers
+                Contact Messages
             </h2>
 
             <AdminDataTable
-                data={newsletter}
+                data={partners}
                 columns={[
+                    { key: "organization", label: "Organization" },
                     { key: "email", label: "Email" },
+                    { key: "phone", label: "Phone" },
+                    { key: "orgType", label: "Type" },
+                    { key: "interest", label: "Interest" },
+                    // { key: "message", label: "Message" },
                     { key: "createdAt", label: "Date"}
                 ]}
                 handleDelete={handleDelete}
@@ -84,5 +96,5 @@ export default function AdminNewsletterPage() {
                 fetching={fetching}  // 👈 pass down
             />
         </div>
-    )
+    );
 }

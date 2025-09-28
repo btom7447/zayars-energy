@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import {
     ClockIcon,
-    DeleteIcon,
+    Trash2,
     LayoutGridIcon,
     LayoutListIcon,
     PencilLineIcon,
@@ -284,7 +284,7 @@ export default function PostsSection({
                                 <PencilLineIcon size={25} strokeWidth={1} />
                             </button>
                             <button onClick={() => handleDelete(post._id)} className="p-2 bg-red-600 text-white rounded-full cursor-pointer">
-                                <DeleteIcon size={25} strokeWidth={1} />
+                                <Trash2 size={25} strokeWidth={1} />
                             </button>
                         </div>
                     </div>

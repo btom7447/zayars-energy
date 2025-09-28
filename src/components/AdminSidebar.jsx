@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
-import { LogOut, Users, ShoppingBag, Settings, FileTextIcon, MailIcon, UsersIcon, ContactIcon } from "lucide-react";
+import { LogOut, Users, ShoppingBag, Settings, FileTextIcon, MailIcon, UsersIcon, ContactIcon, HandshakeIcon } from "lucide-react";
 import Image from "next/image";
 
 export default function AdminSidebar({ onClose }) {
@@ -14,6 +14,7 @@ export default function AdminSidebar({ onClose }) {
         { name: "Blog", href: "/admin", icon: FileTextIcon },
         { name: "Contact", href: "/admin/contact", icon: ContactIcon },
         { name: "Newsletter", href: "/admin/newsletter", icon: MailIcon },
+        { name: "Partners", href: "/admin/partners", icon: HandshakeIcon },
         { name: "Team", href: "/admin/team", icon: UsersIcon },
     ];
 
@@ -34,7 +35,7 @@ export default function AdminSidebar({ onClose }) {
 
 
             {/* Navigation */}
-            <nav className="flex lg:flex-1">
+            <nav className="flex lg:flex-1 mt-0 lg:mt-10">
                 <ul className="space-y-5 text-lg">
                     {navItems.map((item) => {
                         const Icon = item.icon;
