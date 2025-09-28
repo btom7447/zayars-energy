@@ -73,12 +73,12 @@ export default function Footer() {
                 <NewsletterForm />
             </div>
             <div className="mt-20 w-full flex flex-col xl:flex-row items-center justify-center xl:justify-between">
-                <p className="text-white text-sm lg:text-2xl font-light">&copy; {currentYear} Zayars Energy. All rights reserved.</p>
+                <p className="text-white text-sm lg:text-lg font-light">&copy; {currentYear} Zayars Energy. All rights reserved.</p>
                 <a
                     href="https://kmini-tech.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-yellow-500 text-sm lg:text-2xl font-light"
+                    className="text-yellow-500 text-sm lg:text-lg font-light"
                 >
                     By Kmini Technologies
                 </a>

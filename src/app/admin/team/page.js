@@ -118,7 +118,7 @@ export default function AdminTeamPage() {
                 handleView={handleView}
                 loading={loading}
                 fetching={fetching}
-                rowsPerPage={5}
+                rowsPerPage={10}
             />
 
             {modalOpen && (

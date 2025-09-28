@@ -1,6 +1,6 @@
 "use client";
 
-import { Trash2, Eye } from "lucide-react";
+import { Trash2, Eye, PencilIcon, PencilLineIcon, ChevronRight, ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { MoonLoader } from "react-spinners";
 
@@ -88,7 +88,7 @@ export default function AdminTeamTable({
                                             onClick={() => handleView(row)}
                                             className="text-blue-600 hover:text-blue-800"
                                         >
-                                            <Eye size={20} strokeWidth={1} />
+                                            <PencilLineIcon size={20} strokeWidth={1} />
                                         </button>
                                         <button
                                             onClick={() => handleDelete(row._id)}
@@ -103,23 +103,23 @@ export default function AdminTeamTable({
                     </table>
 
                     {totalPages > 1 && (
-                        <div className="flex justify-between items-center p-3 border-t bg-gray-50">
+                        <div className="mt-10 flex justify-end items-center gap-5 p-5 border-t bg-gray-50">
                             <button
                                 onClick={() => goToPage(currentPage - 1)}
                                 disabled={currentPage === 1}
-                                className="px-3 py-1 border rounded disabled:opacity-50"
+                                className="cursor-pointer px-2 py-1 border border-gray-500 text-black rounded-xl disabled:opacity-50"
                             >
-                                Prev
+                                <ChevronLeft size={25} strokeWidth={1} />
                             </button>
-                            <span>
+                            <span className="text-sm text-black">
                                 Page {currentPage} of {totalPages}
                             </span>
                             <button
                                 onClick={() => goToPage(currentPage + 1)}
                                 disabled={currentPage === totalPages}
-                                className="px-3 py-1 border rounded disabled:opacity-50"
+                                className="cursor-pointer px-2 py-1 border border-gray-500 text-black rounded-xl disabled:opacity-50"
                             >
-                                Next
+                                <ChevronRight size={25} strokeWidth={1} />
                             </button>
                         </div>
                     )}

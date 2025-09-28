@@ -4,6 +4,7 @@ import { useState } from "react";
 import { XIcon } from "lucide-react";
 import { MoonLoader } from "react-spinners";
 import { toast } from "react-toastify";
+import ToggleSwitch from "./ToggleSwitch";
 
 export default function EditTeamModal({ onClose, onSubmit, member }) {
     const [uploading, setUploading] = useState(false);
@@ -25,6 +26,13 @@ export default function EditTeamModal({ onClose, onSubmit, member }) {
     setForm((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleToggleChange = (name, checked) => {
+    setForm((prev) => ({
+      ...prev,
+      [name]: checked,
     }));
   };
 
@@ -245,29 +253,27 @@ export default function EditTeamModal({ onClose, onSubmit, member }) {
           </div>
 
           {/* Admin Access & Visible */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-15">
             <div className="mb-5">
               <label htmlFor="admin" className="block text-xl font-semibold text-gray-800 mb-2">
                 Admin Access
               </label>
-              <input
-                id="admin"
-                type="checkbox"
+              <ToggleSwitch
+                id="adminAccess"
                 name="adminAccess"
                 checked={form.adminAccess}
-                onChange={handleChange}
+                onChange={(e) => handleToggleChange('adminAccess', e.target.checked)}
               />
             </div>
             <div className="mb-5">
               <label htmlFor="visible" className="block text-xl font-semibold text-gray-800 mb-2">
                 Visible on Site
               </label>
-              <input
+              <ToggleSwitch
                 id="visible"
-                type="checkbox"
                 name="visible"
                 checked={form.visible}
-                onChange={handleChange}
+                onChange={(e) => handleToggleChange('visible', e.target.checked)}
               />
             </div>
           </div>
